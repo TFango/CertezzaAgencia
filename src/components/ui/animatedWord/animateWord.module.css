@@ -1,0 +1,17 @@
+.word {
+  display: inline-block;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  color: #E3E3D9;
+}
+
+/* Estado inicial / entrando */
+.enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Saliendo hacia arriba */
+.exit {
+  opacity: 0;
+  transform: translateY(-12px);
+}

@@ -1,0 +1,52 @@
+.main {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #2b2b2b;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 5px 16px;
+  font-size: 11px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e3e3d9;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  animation: fadeUp 1s ease 0.1s both;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  min-height: 100vh;
+  width: 100%;
+}
+
+.title {
+  color: #e3e3d9;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle{
+    color: #838383;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
