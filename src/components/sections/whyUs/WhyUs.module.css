@@ -1,0 +1,87 @@
+.whyUs {
+  background: #202020;
+  display: flex;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* ── Header ── */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.title {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  color: #e3e3d9;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.subtitle {
+  color: #838383;
+  font-weight: 300;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.6;
+}
+
+/* ── Grid ── */
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Card ── */
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #272727;
+  padding: 28px 20px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 20px;
+  gap: 6px;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+  /* Glow sutil en el borde al hacer tap — se activa desde framer */
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.article:active {
+  border-color: rgba(227, 227, 217, 0.2);
+  box-shadow: 0 0 20px rgba(227, 227, 217, 0.05);
+}
+
+.logo {
+  width: 22px;
+  height: 22px;
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+
+.percent {
+  color: #e3e3d9;
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.infoArticle {
+  color: #838383;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 220px;
+}

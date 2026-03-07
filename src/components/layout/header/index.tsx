@@ -7,7 +7,7 @@ export default function Header() {
       <div className={styles.container}>
         <Link href="/" aria-label="Certezza - Ir al inicio">
           <img
-            src="/logos/logo-gris.png"
+            src="/logos/logo-gris.svg"
             alt="Certezza"
             className={styles.logo}
           />
