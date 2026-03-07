@@ -1,9 +1,17 @@
-import styles from "./Header.module.css";
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
+import styles from "./Header.module.css";
 
 export default function Header() {
   return (
-    <header className={styles.header}>
+    <motion.header
+      className={styles.header}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className={styles.container}>
         <Link href="/" aria-label="Certezza - Ir al inicio">
           <img
@@ -12,10 +20,14 @@ export default function Header() {
             className={styles.logo}
           />
         </Link>
-        <button className={styles.menu} aria-label="Abrir menú">
+        <motion.button
+          className={styles.menu}
+          aria-label="Abrir menú"
+          whileTap={{ scale: 0.9 }}
+        >
           <img src="/icons/menu.svg" alt="" aria-hidden="true" />
-        </button>
+        </motion.button>
       </div>
-    </header>
+    </motion.header>
   );
 }

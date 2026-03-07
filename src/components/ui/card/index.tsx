@@ -50,7 +50,7 @@ export default function Card({ variant }: Props) {
       <p className={styles.description}>{descriptions[variant]}</p>
 
       <Button variant={variant === "marketing" ? "cardMarketing" : "cardWeb"}>
-        Ver planes
+        Mas info
       </Button>
 
       <p className={styles.number}>{variant === "marketing" ? "1" : "2"}</p>

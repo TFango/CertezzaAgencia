@@ -1,5 +1,7 @@
 import "./global.css";
+
 import Header from "@/components/layout/header";
+import AppWrapper from "@/components/appWrapper";
 
 import { Inter } from "next/font/google";
 
@@ -17,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="es" className={inter.variable}>
       <body>
-        <Header />
-        <main>{children}</main>
+        <AppWrapper>
+          <Header />
+          <main>{children}</main>
+        </AppWrapper>
       </body>
     </html>
   );
