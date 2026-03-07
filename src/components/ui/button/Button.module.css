@@ -22,7 +22,7 @@
 }
 
 .primary {
-  background: #E3E3D9;
+  background: #e3e3d9;
   color: #000000;
 }
 
@@ -52,4 +52,46 @@
   background: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(1px);
+}
+
+.cardMarketing {
+  background: #cd9afa;
+  color: #2b2b2b;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cardMarketing:hover {
+  background: #bb80f8;
+  box-shadow: 0 8px 24px rgba(205, 154, 250, 0.35);
+  transform: translateY(-2px);
+}
+
+.cardMarketing:active {
+  background: #a866f0;
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.cardWeb {
+  background: #449bff;
+  color: #2b2b2b;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cardWeb:hover {
+  background: #2a87ff;
+  box-shadow: 0 8px 24px rgba(68, 155, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.cardWeb:active {
+  background: #1a76f0;
+  transform: translateY(1px);
+  box-shadow: none;
 }

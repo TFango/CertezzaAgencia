@@ -1,6 +1,6 @@
 type ButtonsProps = {
   children: React.ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "cardMarketing" | "cardWeb";
   onClick?: () => void;
 };
 

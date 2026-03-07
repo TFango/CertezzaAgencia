@@ -1,0 +1,8 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 1.5rem;
+  background-color: #202020;
+  padding-bottom: 8rem;
+  gap: 4rem;
+}

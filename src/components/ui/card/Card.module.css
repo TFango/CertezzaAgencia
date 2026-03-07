@@ -1,0 +1,75 @@
+.card {
+  border-radius: 24px;
+  padding: 2rem 3rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 80px;
+}
+
+.card:nth-child(2) {
+  top: 100px;
+}
+
+.marketing {
+  background: #2f1b3a;
+  border: 1px solid rgba(205, 154, 250, 0.25);
+}
+
+.web {
+  background: #0d2847;
+  border: 1px solid rgba(68, 155, 255, 0.25);
+}
+
+.title {
+  font-size: 2.625rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.marketing .title {
+  color: #d49dfb;
+}
+
+.web .title {
+  color: #449bff;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.marketingTag {
+  border: 1px solid #d7a1ff;
+  color: #d7a1ff;
+}
+
+.webTag {
+  border: 1px solid #449bff;
+  color: #449bff;
+}
+
+.description {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #e3e3d9;
+  margin-bottom: 30px;
+}
+
+.number {
+  color: #e3e3d9;
+  font-size: 3rem;
+  font-weight: 800;
+  align-self: flex-end;
+}
