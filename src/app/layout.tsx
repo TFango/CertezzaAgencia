@@ -2,6 +2,7 @@ import "./global.css";
 
 import Header from "@/components/layout/header";
 import AppWrapper from "@/components/appWrapper";
+import Footer from "@/components/layout/footer";
 
 import { Inter } from "next/font/google";
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <AppWrapper>
           <Header />
           <main>{children}</main>
+          <Footer />
         </AppWrapper>
       </body>
     </html>

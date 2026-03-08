@@ -1,6 +1,7 @@
 import styles from "./Card.module.css";
 
 import Button from "../button";
+import Link from "next/link";
 
 type Props = {
   variant: "marketing" | "web";
@@ -49,9 +50,15 @@ export default function Card({ variant }: Props) {
 
       <p className={styles.description}>{descriptions[variant]}</p>
 
-      <Button variant={variant === "marketing" ? "cardMarketing" : "cardWeb"}>
-        Mas info
-      </Button>
+      <Link
+        href={
+          variant === "marketing" ? "/servicios/marketing" : "/servicios/web"
+        }
+      >
+        <Button variant={variant === "marketing" ? "cardMarketing" : "cardWeb"}>
+          Mas info
+        </Button>
+      </Link>
 
       <p className={styles.number}>{variant === "marketing" ? "1" : "2"}</p>
     </div>
