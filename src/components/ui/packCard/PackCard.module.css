@@ -1,0 +1,191 @@
+.packs {
+  background: #111111;
+  padding: 4rem 1.25rem 6rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #e3e3d9;
+  line-height: 1.2;
+}
+
+/* ── Cards ── */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ── Card ── */
+
+.card {
+  --card-bg: #1a1a1a;
+  --page-bg: #111111;
+  --cut-size: 56px;
+  --btn-size: 40px;
+  --border-color: #2a2a2a;
+
+  position: relative;
+  overflow: visible;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 28px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 35px;
+}
+
+/* recorte superior derecho */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: var(--cut-size);
+  height: var(--cut-size);
+  background: var(--page-bg);
+  border-bottom-left-radius: 28px;
+  box-shadow: -1px 1px 0 var(--border-color);
+  z-index: 1;
+}
+
+.cardOpen {
+  border-color: rgba(212, 157, 251, 0.3);
+  --border-color: rgba(212, 157, 251, 0.3);
+}
+
+/* ── Top row ── */
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardNumber {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #838383;
+  letter-spacing: 0.08em;
+}
+.toggleBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  border-radius: 999px;
+  border: 1px solid #333333;
+  background: #0f0f0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.toggleBtn:hover {
+  background: #333333;
+  border-color: rgba(212, 157, 251, 0.3);
+}
+
+.toggleIcon {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #e3e3d9;
+  display: block;
+  line-height: 1;
+}
+
+/* ── Título + ícono ── */
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e3e3d9;
+  line-height: 1.3;
+  flex: 1;
+}
+
+.cardIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  opacity: 0.5;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── Descripción ── */
+.cardDescription {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #838383;
+  line-height: 1.6;
+}
+
+/* ── Ver más ── */
+.verMas {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #d49dfb;
+  letter-spacing: 0.04em;
+  text-align: left;
+  transition: opacity 0.2s ease;
+}
+
+.verMas:hover {
+  opacity: 0.75;
+}
+
+/* ── Items desplegables ── */
+.cardItems {
+  border-top: 1px solid #2a2a2a;
+  padding-top: 0.75rem;
+}
+
+.itemsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #e3e3d9;
+  line-height: 1.4;
+}
+
+.itemDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d49dfb;
+  flex-shrink: 0;
+  opacity: 0.7;
+}

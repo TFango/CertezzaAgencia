@@ -35,10 +35,23 @@ const descriptions = {
   web: "Creamos sitios que convierten visitas en clientes. Rápidos, modernos y optimizados para que tu negocio se vea profesional desde el primer clic.",
 };
 
+const icons = {
+  marketing: "/icons/marketing.svg",
+  web: "/icons/web.svg",
+};
+
 export default function Card({ variant }: Props) {
   return (
     <div className={`${styles.card} ${styles[variant]}`}>
-      <h1 className={styles.title}>{titles[variant]}</h1>
+      <div className={styles.titleRow}>
+        <h1 className={styles.title}>{titles[variant]}</h1>
+        <img
+          src={icons[variant]}
+          alt=""
+          className={styles.titleIcon}
+          aria-hidden="true"
+        />
+      </div>
 
       <div className={styles.tags}>
         {tags[variant].map((tag) => (

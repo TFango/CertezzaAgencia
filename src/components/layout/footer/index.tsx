@@ -92,7 +92,7 @@ export default function Footer() {
             className={styles.logo}
           />
           <p className={styles.copy}>
-            © 2025 Certezza. Todos los derechos reservados.
+            © 2026 Certezza. Todos los derechos reservados.
           </p>
         </div>
       </div>

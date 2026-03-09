@@ -4,6 +4,7 @@ import ParticlesCanvas from "@/components/ui/particlesCanvas";
 import AnimatedWord from "@/components/ui/animatedWord";
 import Button from "@/components/ui/button";
 import Marquee from "@/components/ui/marquee";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -23,8 +24,12 @@ export default function Hero() {
         </div>
 
         <div className={styles.buttons}>
-          <Button variant="primary">Ver servicios</Button>
-          <Button variant="secondary">Contactar</Button>
+          <Link href="#servicios">
+            <Button variant="primary">Ver servicios</Button>
+          </Link>
+          <Link href="#contacto">
+            <Button variant="secondary">Contactar</Button>
+          </Link>
         </div>
 
         <div className={styles.recomend}>

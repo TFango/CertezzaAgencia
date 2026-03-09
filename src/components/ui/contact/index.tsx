@@ -4,11 +4,43 @@ import { useState } from "react";
 import ParticlesCanvas from "@/components/ui/particlesCanvas";
 import styles from "./Contact.module.css";
 
-export default function Contact() {
+type ContactVariant = "home" | "marketing" | "web";
+
+type Props = {
+  variant?: ContactVariant;
+};
+
+const config = {
+  home: {
+    title: "¿Listo para recuperar tiempo y hacer crecer tu negocio?",
+    subtitle: "Modernizá tu presencia digital junto a nosotros.",
+    button: "Enviar mensaje",
+    defaultService: "",
+    autoSelectedMsg: null,
+  },
+  marketing: {
+    title: "¿Querés potenciar tu marca en redes?",
+    subtitle: "Contanos tu proyecto y te armamos una propuesta a medida.",
+    button: "Quiero potenciar mi marca",
+    defaultService: "Marketing Digital",
+    autoSelectedMsg: "Seleccionamos Marketing Digital automáticamente porque estás en nuestra página de marketing.",
+  },
+  web: {
+    title: "¿Querés una web que convierta visitas en clientes?",
+    subtitle: "Contanos tu proyecto y te armamos una propuesta a medida.",
+    button: "Quiero mi sitio web",
+    defaultService: "Desarrollo Web",
+    autoSelectedMsg: "Seleccionamos Desarrollo Web automáticamente porque estás en nuestra página de web.",
+  },
+};
+
+export default function Contact({ variant = "home" }: Props) {
+  const { title, subtitle, button, defaultService, autoSelectedMsg } = config[variant];
+
   const [form, setForm] = useState({
     name: "",
     email: "",
-    service: "",
+    service: defaultService,
     message: "",
   });
 
@@ -23,7 +55,6 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
-
     setStatus("loading");
 
     try {
@@ -35,7 +66,7 @@ export default function Contact() {
 
       if (res.ok) {
         setStatus("sent");
-        setForm({ name: "", email: "", service: "", message: "" });
+        setForm({ name: "", email: "", service: defaultService, message: "" });
       } else {
         setStatus("error");
       }
@@ -49,12 +80,8 @@ export default function Contact() {
       <ParticlesCanvas />
 
       <div className={styles.content}>
-        <h2 className={styles.title}>
-          ¿Listo para recuperar tiempo <br /> y hacer crecer tu negocio?
-        </h2>
-        <p className={styles.subtitle}>
-          Modernizá tu presencia digital junto a nosotros.
-        </p>
+        <h2 className={styles.title}>{title}</h2>
+        <p className={styles.subtitle}>{subtitle}</p>
 
         <form className={styles.form} onSubmit={handleSubmit}>
           <input type="text" name="honeypot" style={{ display: "none" }} />
@@ -83,18 +110,28 @@ export default function Contact() {
             <label className={styles.label} htmlFor="service">
               Servicio de interés
             </label>
-            <select
-              id="service"
-              name="service"
-              className={`${styles.input} ${styles.select}`}
-              value={form.service}
-              onChange={handleChange}
-            >
-              <option value="" disabled>Seleccioná uno</option>
-              <option value="Marketing Digital">Marketing Digital</option>
-              <option value="Desarrollo Web">Desarrollo Web</option>
-              <option value="Ambos">Ambos</option>
-            </select>
+
+            {variant !== "home" ? (
+              <div className={styles.serviceFixed}>
+                <span className={styles.serviceFixedValue}>{defaultService}</span>
+                {autoSelectedMsg && (
+                  <p className={styles.autoMsg}>{autoSelectedMsg}</p>
+                )}
+              </div>
+            ) : (
+              <select
+                id="service"
+                name="service"
+                className={`${styles.input} ${styles.select}`}
+                value={form.service}
+                onChange={handleChange}
+              >
+                <option value="" disabled>Seleccioná uno</option>
+                <option value="Marketing Digital">Marketing Digital</option>
+                <option value="Desarrollo Web">Desarrollo Web</option>
+                <option value="Ambos">Ambos</option>
+              </select>
+            )}
           </div>
 
           <textarea
@@ -115,7 +152,7 @@ export default function Contact() {
             {status === "loading" && "Enviando..."}
             {status === "sent" && "¡Mensaje enviado!"}
             {status === "error" && "Reintentar"}
-            {status === "idle" && "Enviar mensaje"}
+            {status === "idle" && button}
           </button>
 
           {status === "error" && (

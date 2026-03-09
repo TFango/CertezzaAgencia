@@ -1,0 +1,81 @@
+.howWeWork {
+  background: #2b2b2b;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #e3e3d9;
+  line-height: 1.2;
+}
+
+/* ── Steps ── */
+.steps {
+  display: flex;
+  flex-direction: column;
+  background: #222222;
+  border: 1px solid #333333;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* ── Step ── */
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #333333;
+}
+
+.step:last-child {
+  border-bottom: none;
+}
+
+/* ── Header de cada etapa ── */
+.stepHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stepNumber {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #838383;
+  letter-spacing: 0.04em;
+}
+
+.stepTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stepTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e3e3d9;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+}
+
+/* ── Descripción ── */
+.stepDescription {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #838383;
+  line-height: 1.6;
+  text-align: center;
+}

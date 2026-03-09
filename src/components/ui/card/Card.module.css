@@ -73,3 +73,15 @@
   font-weight: 800;
   align-self: flex-end;
 }
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.titleIcon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
