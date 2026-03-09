@@ -1,0 +1,122 @@
+.problemWeSolve {
+  background: #202020;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ── Info ── */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #838383;
+}
+
+.description {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #e3e3d9;
+  line-height: 1.7;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #838383;
+  line-height: 1.7;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(198, 176, 153, 0.4);
+  text-align: center;
+}
+
+/* ── Identify ── */
+.identify {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.titleIdentify {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e3e3d9;
+  text-align: center;
+}
+
+/* ── Carrusel ── */
+.carouselWrapper {
+  overflow: hidden;
+  cursor: grab;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+}
+
+.carouselWrapper:active {
+  cursor: grabbing;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  width: max-content;
+  padding: 0.5rem 1rem;
+}
+
+/* ── Card ── */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #2b2b2b;
+  border: 1px solid #333333;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  width: 280px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.titleCard {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e3e3d9;
+  line-height: 1.4;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(198, 176, 153, 0.4);
+}
+
+.descriptionCard {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #838383;
+  line-height: 1.6;
+}
