@@ -4,11 +4,21 @@ import WhyUs from "@/components/sections/home/whyUs";
 import Contact from "@/components/ui/contact";
 import ProblemWeSolve from "@/components/sections/home/problemWeSolve";
 import HowWeWork from "@/components/sections/home/howWeWork";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Certezza | Agencia de Marketing Digital y Desarrollo Web",
+  description:
+    "En Certezza combinamos desarrollo web y marketing digital para que tu negocio se vea profesional y llegue a más clientes. Basados en Mar del Plata.",
+  alternates: {
+    canonical: "https://certezza.com.ar",
+  },
+};
 
 export default function Home() {
   return (
     <main>
-      <section id="/">
+      <section id="inicio">
         <Hero />
       </section>
       <section id="problemasQueResolvemos">
