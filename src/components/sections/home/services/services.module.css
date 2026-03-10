@@ -39,3 +39,23 @@
     font-size: 1.5rem;
   }
 }
+
+@media (min-width: 1023px) {
+  .section {
+    padding: 6rem 4rem 8rem;
+  }
+
+  .info {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 4.5rem;
+  }
+
+  .description {
+    font-size: 1.6rem;
+  }
+}

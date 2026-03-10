@@ -68,3 +68,15 @@
 .brand:hover {
   color: rgba(255, 255, 255, 0.7);
 }
+
+@media (min-width: 1023px) {
+  .wrapper {
+    align-items: flex-start;
+  }
+
+  .marquee {
+    width: 100%;
+    position: relative;
+    left: 0;
+  }
+}

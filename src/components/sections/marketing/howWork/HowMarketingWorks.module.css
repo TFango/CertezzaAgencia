@@ -111,3 +111,38 @@
     font-size: 0.85rem;
   }
 }
+
+@media (min-width: 1023px) {
+  .section {
+    padding: 6rem 4rem 7rem;
+  }
+
+  .header {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .step {
+    padding: 2.5rem;
+  }
+
+  .stepTitle {
+    font-size: 1.2rem;
+  }
+
+  .stepText {
+    font-size: 1rem;
+  }
+}

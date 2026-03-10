@@ -82,6 +82,10 @@
   letter-spacing: 0.03em;
 }
 
+/* ────────────────────────────
+   Tablet
+──────────────────────────── */
+
 @media (min-width: 767px) {
   .footer {
     padding: 4rem 2.5rem 2.5rem;
@@ -96,5 +100,24 @@
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
+  }
+}
+
+/* ────────────────────────────
+   Laptop
+──────────────────────────── */
+
+@media (min-width: 1023px) {
+  .footer {
+    padding: 5rem 4rem 3rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    width: 180px;
   }
 }

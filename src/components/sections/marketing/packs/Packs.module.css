@@ -27,3 +27,18 @@
     text-align: left;
   }
 }
+
+@media (min-width: 1023px) {
+  .packs {
+    padding: 6rem 4rem 7rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+}

@@ -90,7 +90,7 @@
   padding: 0.5rem 1rem;
 }
 
-/* ── Card ── */
+/* ── Card mobile ── */
 .card {
   display: flex;
   flex-direction: column;
@@ -121,13 +121,16 @@
   line-height: 1.6;
 }
 
+/* Desktop cards — ocultas en mobile/tablet */
+.desktopCards {
+  display: none;
+}
+
 /* ────────────────────────────
    Tablet
 ──────────────────────────── */
-
 @media (min-width: 767px) {
   .problemWeSolve {
-    background: #202020;
     padding: 4rem 2.5rem 3em;
   }
 
@@ -148,5 +151,120 @@
     font-size: 1.1rem;
     text-align: left;
     max-width: 600px;
+  }
+}
+
+/* ────────────────────────────
+   Laptop
+──────────────────────────── */
+@media (min-width: 1023px) {
+  .problemWeSolve {
+    padding: 6rem 4rem;
+  }
+
+  .container {
+    flex-direction: row;
+    align-items: center;
+    gap: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .info {
+    flex: 1;
+    max-width: 460px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    text-align: left;
+  }
+
+  .identify {
+    flex: 1;
+  }
+
+  .titleIdentify {
+    text-align: left;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Ocultá el carrusel en laptop */
+  .carouselWrapper {
+    display: none;
+  }
+
+  /* Mostrá las desktop cards */
+  .desktopCards {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Cada card desktop — altura fija para que nada se mueva ── */
+  .desktopCard {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #2e2e2e;
+    cursor: pointer;
+    align-items: flex-start;
+    min-height: 100px;
+  }
+
+  .desktopCard:first-child {
+    border-top: 1px solid #2e2e2e;
+  }
+
+  /* ── Indicador lateral ── */
+  .desktopCardIndicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding-top: 4px;
+    width: 12px;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+
+  .desktopCardDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c6b099;
+    flex-shrink: 0;
+  }
+
+  .desktopCardProgress {
+    width: 2px;
+    background: rgba(198, 176, 153, 0.4);
+    border-radius: 999px;
+    flex: 1;
+  }
+
+  /* ── Contenido ── */
+  .desktopCardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .desktopCardTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #e3e3d9;
+    line-height: 1.4;
+  }
+
+  .desktopCardDesc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: #838383;
+    line-height: 1.6;
   }
 }

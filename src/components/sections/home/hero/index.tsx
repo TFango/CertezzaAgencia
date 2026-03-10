@@ -18,7 +18,7 @@ export default function Hero() {
             Convertimos ideas en <br /> <AnimatedWord />
           </h1>
           <p className={styles.subtitle}>
-            Creamos webs y estrategias digitales <br />
+            Creamos webs y estrategias digitales 
             que atraen clientes y potencian tu negocio
           </p>
         </div>

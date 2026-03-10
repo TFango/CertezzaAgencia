@@ -18,3 +18,8 @@
     width: 160px;
   }
 }
+@media (min-width: 1023px) {
+  .logo {
+    width: 200px;
+  }
+}

@@ -111,3 +111,29 @@
     height: 18px;
   }
 }
+
+@media (min-width: 1023px) {
+  .content {
+    padding: 10rem 6rem 6rem;
+    max-width: 720px;
+  }
+
+  .title {
+    font-size: 5rem;
+  }
+
+  .description {
+    font-size: 1.15rem;
+    max-width: 540px;
+  }
+
+  .badge {
+    font-size: 1rem;
+    padding: 9px 20px;
+  }
+
+  .badgeIcon {
+    width: 20px;
+    height: 20px;
+  }
+}

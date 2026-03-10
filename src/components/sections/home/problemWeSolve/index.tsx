@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import styles from "./ProblemWeSolve.module.css";
 
@@ -26,6 +26,64 @@ const cards = [
       "Sin métricas claras, estás tirando dinero sin saber qué funciona.",
   },
 ];
+
+function DesktopCards() {
+  const [active, setActive] = useState(0);
+  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % cards.length);
+      setKey((prev) => prev + 1);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleClick = (i: number) => {
+    setActive(i);
+    setKey((prev) => prev + 1);
+  };
+
+  return (
+    <div className={styles.desktopCards}>
+      {cards.map((card, i) => (
+        <motion.div
+          key={i}
+          className={`${styles.desktopCard} ${active === i ? styles.desktopCardActive : ""}`}
+          onClick={() => handleClick(i)}
+          animate={{
+            opacity: active === i ? 1 : 0.3,
+            x: active === i ? 8 : 0,
+          }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        >
+          <div className={styles.desktopCardIndicator}>
+            <motion.div
+              className={styles.desktopCardDot}
+              animate={{ scale: active === i ? 1.3 : 1 }}
+              transition={{ duration: 0.3 }}
+            />
+            {active === i && (
+              <motion.div
+                key={key}
+                className={styles.desktopCardProgress}
+                initial={{ scaleY: 0 }}
+                animate={{ scaleY: 1 }}
+                transition={{ duration: 2.8, ease: "linear" }}
+                style={{ originY: 0 }}
+              />
+            )}
+          </div>
+
+          <div className={styles.desktopCardContent}>
+            <h3 className={styles.desktopCardTitle}>{card.title}</h3>
+            <p className={styles.desktopCardDesc}>{card.description}</p>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
 
 export default function ProblemWeSolve() {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -71,6 +129,7 @@ export default function ProblemWeSolve() {
             ¿Te identificas?
           </motion.h2>
 
+          {/* Mobile/Tablet — carrusel horizontal */}
           <div className={styles.carouselWrapper} ref={dragRef}>
             <motion.div
               ref={cardsRef}
@@ -93,6 +152,9 @@ export default function ProblemWeSolve() {
               ))}
             </motion.div>
           </div>
+
+          {/* Laptop — cards verticales automáticas */}
+          <DesktopCards />
         </div>
       </div>
     </section>

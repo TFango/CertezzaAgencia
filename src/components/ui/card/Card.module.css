@@ -115,3 +115,22 @@
     border-radius: 3px;
   }
 }
+
+@media (min-width: 1023px) {
+  .card {
+    max-width: 100%;
+    padding: 2.5rem 3rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .number {
+    font-size: 4rem;
+  }
+
+  .description {
+    font-size: 1.05rem;
+  }
+}

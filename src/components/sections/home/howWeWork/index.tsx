@@ -38,15 +38,15 @@ function Step({
   delay,
 }: (typeof steps)[0] & { delay: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <motion.div
       ref={ref}
       className={styles.step}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay, ease: "easeOut" }}
+      transition={{ duration: 0.55, delay, ease: [0.25, 0.1, 0.25, 1] }}
     >
       <div className={styles.stepHeader}>
         <span className={styles.stepNumber}>{number}</span>
@@ -84,7 +84,7 @@ export default function HowWeWork() {
 
         <div className={styles.steps}>
           {steps.map((step, i) => (
-            <Step key={step.number} {...step} delay={i * 0.1} />
+            <Step key={step.number} {...step} delay={i * 0.15} />
           ))}
         </div>
       </div>
