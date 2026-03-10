@@ -12,3 +12,9 @@
   width: 120px;
   object-fit: contain;
 }
+
+@media (min-width: 767px) {
+  .logo {
+    width: 160px;
+  }
+}

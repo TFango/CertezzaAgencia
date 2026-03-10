@@ -7,12 +7,35 @@
   gap: 4rem;
 }
 
-.title{
-   color: #E3E3D9;
-   font-size: 3rem;
+.title {
+  color: #e3e3d9;
+  font-size: 3rem;
   line-height: 1.2;
 }
 
-.description{
+.description {
   color: #838383;
+}
+
+/* ────────────────────────────
+   Tablet
+──────────────────────────── */
+@media (min-width: 767px) {
+
+  .section {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2.5rem;
+  background-color: #202020;
+  padding-bottom: 8rem;
+  gap: 4rem;
+}
+  .title {
+    font-size: 4rem;
+  }
+
+  .description {
+    color: #838383;
+    font-size: 1.5rem;
+  }
 }

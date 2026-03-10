@@ -19,7 +19,7 @@
 }
 
 .title {
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-size: 1.8rem;
   color: #e3e3d9;
   font-weight: 800;
   line-height: 1.2;
@@ -28,7 +28,7 @@
 .subtitle {
   color: #838383;
   font-weight: 300;
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 
@@ -72,7 +72,7 @@
 
 .percent {
   color: #e3e3d9;
-  font-size: clamp(1.6rem, 5vw, 2rem);
+  font-size: 1.6rem;
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -80,8 +80,52 @@
 
 .infoArticle {
   color: #838383;
-  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  font-size: 0.8rem;
   font-weight: 400;
   line-height: 1.5;
   max-width: 220px;
+}
+
+/* ────────────────────────────
+   Tablet
+──────────────────────────── */
+@media (min-width: 767px) {
+  .whyUs {
+    background: #202020;
+    display: flex;
+    padding: 4rem 2.5rem 6rem;
+  }
+  .title {
+    font-size: 4rem;
+  }
+
+  .subtitle {
+    color: #838383;
+    font-weight: 300;
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+
+  .percent {
+    color: #e3e3d9;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .infoArticle {
+    color: #838383;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 300px;
+  }
+
+  .logo {
+    width: 30px;
+    height: 30px;
+    opacity: 0.6;
+    margin-bottom: 4px;
+  }
 }

@@ -28,9 +28,16 @@ const cards = [
 ];
 
 export default function ProblemWeSolve() {
-  const dragRef = useRef(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const isInView = useInView(titleRef, { once: true, margin: "-60px" });
+  const dragRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  const getConstraints = () => {
+    if (!dragRef.current || !cardsRef.current) return { left: -800, right: 0 };
+    const limit = cardsRef.current.scrollWidth - dragRef.current.offsetWidth;
+    return { left: -limit, right: 0 };
+  };
 
   return (
     <section className={styles.problemWeSolve}>
@@ -66,9 +73,10 @@ export default function ProblemWeSolve() {
 
           <div className={styles.carouselWrapper} ref={dragRef}>
             <motion.div
+              ref={cardsRef}
               className={styles.cards}
               drag="x"
-              dragConstraints={{ left: -800, right: 0 }}
+              dragConstraints={getConstraints()}
               dragElastic={0.08}
               dragTransition={{ bounceStiffness: 100, bounceDamping: 20 }}
               whileDrag={{ cursor: "grabbing" }}

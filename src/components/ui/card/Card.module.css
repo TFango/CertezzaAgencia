@@ -85,3 +85,33 @@
   height: 28px;
   object-fit: contain;
 }
+
+@media (min-width: 767px) {
+  .card {
+    padding: 1.5rem 2rem;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #e3e3d9;
+    margin-bottom: 30px;
+  }
+  .number {
+    font-size: 3.5rem;
+  }
+
+  .tag {
+    font-size: 0.90rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+}

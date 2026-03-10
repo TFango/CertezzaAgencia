@@ -120,3 +120,33 @@
   color: #838383;
   line-height: 1.6;
 }
+
+/* ────────────────────────────
+   Tablet
+──────────────────────────── */
+
+@media (min-width: 767px) {
+  .problemWeSolve {
+    background: #202020;
+    padding: 4rem 2.5rem 3em;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .titleIdentify {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    max-width: 600px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    text-align: left;
+    max-width: 600px;
+  }
+}

@@ -80,3 +80,34 @@
   color: #838383;
   line-height: 1.6;
 }
+
+@media (min-width: 767px) {
+  .section {
+    padding: 5rem 2.5rem 6rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    max-width: 540px;
+  }
+
+  .step {
+    padding: 2rem;
+  }
+
+  .stepTitle {
+    font-size: 1.1rem;
+  }
+
+  .stepText {
+    font-size: 0.95rem;
+  }
+
+  .number {
+    font-size: 0.85rem;
+  }
+}

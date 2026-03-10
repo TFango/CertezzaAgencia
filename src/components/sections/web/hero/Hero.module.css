@@ -84,3 +84,29 @@
   line-height: 1.7;
   max-width: 380px;
 }
+
+@media (min-width: 767px) {
+  .content {
+    padding: 8rem 2.5rem 5rem;
+    max-width: 640px;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .description {
+    font-size: 1.05rem;
+    max-width: 480px;
+  }
+
+  .badge {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+
+  .badgeIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
