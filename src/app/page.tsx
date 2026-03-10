@@ -8,7 +8,7 @@ import HowWeWork from "@/components/sections/home/howWeWork";
 export default function Home() {
   return (
     <main>
-      <section id="inicio">
+      <section id="/">
         <Hero />
       </section>
       <section id="problemasQueResolvemos">

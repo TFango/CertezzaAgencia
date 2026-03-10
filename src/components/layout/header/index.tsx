@@ -1,28 +1,55 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import styles from "./Header.module.css";
 
-const navItems = [
-  { number: "01", label: "Inicio", href: "#inicio" },
-  { number: "02", label: "Servicios", href: "#servicios" },
-  { number: "03", label: "Por que elegirnos?", href: "#PorQueElegirnos" },
-  { number: "04", label: "Nosotros", href: "#nosotros" },
-  { number: "05", label: "Contacto", href: "#contacto" },
+const homeNav = [
+  { number: "01", label: "Inicio", href: "/" },
+  {
+    number: "02",
+    label: "Problema que resolvemos",
+    href: "#problemasQueResolvemos",
+  },
+  { number: "03", label: "Servicios", href: "#servicios" },
+  { number: "04", label: "Por qué elegirnos?", href: "#porQueElegirnos" },
+  { number: "05", label: "Cómo trabajamos", href: "#comoTrabajamos" },
+  { number: "06", label: "Contacto", href: "#contacto" },
+];
+
+const marketingNav = [
+  { number: "01", label: "Inicio", href: "/" },
+  { number: "02", label: "Packs", href: "#packs" },
+  { number: "03", label: "Cómo trabajamos", href: "#comoTrabajamos" },
+  { number: "04", label: "Contacto", href: "#contacto" },
+];
+
+const webNav = [
+  { number: "01", label: "Inicio", href: "/" },
+  { number: "02", label: "Packs", href: "#packs" },
+  { number: "03", label: "Cómo trabajamos", href: "#comoTrabajamos" },
+  { number: "04", label: "Contacto", href: "#contacto" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
-  // Bloquear scroll cuando el menú está abierto
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  const navItems =
+    pathname === "/servicios/marketing"
+      ? marketingNav
+      : pathname === "/servicios/web"
+        ? webNav
+        : homeNav;
 
   return (
     <>
@@ -90,10 +117,8 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Divisor */}
             <div className={styles.overlayDivider} />
 
-            {/* Footer del menú */}
             <div className={styles.overlayFooter}>
               <div className={styles.socials}>
                 <a

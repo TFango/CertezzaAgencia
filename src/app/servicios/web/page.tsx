@@ -1,7 +1,7 @@
-import Hero from "@/components/sections/marketing/hero";
-import Packs from "@/components/sections/marketing/packs";
-import HowMarketingWorks from "@/components/sections/marketing/howWork";
+import Hero from "@/components/sections/web/hero";
 import Contact from "@/components/ui/contact";
+import Packs from "@/components/sections/web/packs";
+import HowWebWorks from "@/components/sections/web/howWork";
 
 export default function WebPage() {
   return (
@@ -11,10 +11,10 @@ export default function WebPage() {
         <Packs />
       </section>
       <section id="comoTrabajamos">
-        <HowMarketingWorks />
+        <HowWebWorks />
       </section>
       <section id="contacto">
-        <Contact variant="marketing" />
+        <Contact variant="web" />
       </section>
     </main>
   );
