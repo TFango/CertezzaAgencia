@@ -1,26 +1,61 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import styles from "./Marquee.module.css";
 
 const BRANDS = [
+  "Vignétique",
+  "OXIDELTA",
+  "MC",
+  "WESTGROWTH",
+  "Ality",
   "l2 twelve",
   "SOLEIL",
   "kooki",
   "GRAND Utilaje",
-  "OPTIMO",
-  "RecruiterOne",
+  "OFF AUTO",
 ];
 
 export default function Marquee() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const posRef = useRef(0);
+  const rafRef = useRef<number>(0);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const speed = 0.5;
+
+    const animate = () => {
+      const halfWidth = track.scrollWidth / 2;
+
+      posRef.current -= speed;
+
+      if (Math.abs(posRef.current) >= halfWidth) {
+        posRef.current = 0;
+      }
+
+      track.style.transform = `translate3d(${posRef.current}px, 0, 0)`;
+      rafRef.current = requestAnimationFrame(animate);
+    };
+
+    rafRef.current = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(rafRef.current);
+  }, []);
+
   return (
-    <div className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <div className={styles.marquee}>
-        <div className={styles.track}>
+        <div ref={trackRef} className={styles.track}>
           {[...BRANDS, ...BRANDS].map((brand, i) => (
-            <span key={i} className={styles.brand}>
-              {brand}
-            </span>
+            <div key={i} className={styles.item}>
+              <span className={styles.brand}>{brand}</span>
+            </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

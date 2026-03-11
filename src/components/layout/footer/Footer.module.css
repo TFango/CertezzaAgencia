@@ -121,3 +121,77 @@
     width: 180px;
   }
 }
+
+/* ────────────────────────────
+   Desktop 1280px
+──────────────────────────── */
+
+@media (min-width: 1279px) {
+  .footer {
+    padding: 6rem 5rem 3.5rem;
+  }
+
+  .container {
+    max-width: 1400px;
+    gap: 2.5rem;
+  }
+
+  .grid {
+    gap: 2.5rem;
+  }
+
+  .col {
+    gap: 1rem;
+  }
+
+  .colTitle {
+    font-size: 0.95rem;
+  }
+
+  .link {
+    font-size: 1.2rem;
+  }
+
+  .copy {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    width: 200px;
+  }
+}
+
+/* ────────────────────────────
+   Desktop 1536px
+──────────────────────────── */
+
+@media (min-width: 1536px) {
+  .footer {
+    padding: 7rem 6rem 4rem;
+  }
+
+  .container {
+    max-width: 1600px;
+    gap: 3rem;
+  }
+
+  .grid {
+    gap: 3rem;
+  }
+
+  .logo {
+    width: 220px;
+  }
+
+  .colTitle {
+    font-size: 1rem;
+  }
+
+  .link {
+    font-size: 1.3rem;
+  }
+
+  .copy {
+    font-size: 1rem;
+  }
+}

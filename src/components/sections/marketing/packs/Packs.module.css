@@ -42,3 +42,39 @@
     font-size: 3.5rem;
   }
 }
+
+/* ────────────────────────────
+   Desktop 1280px
+──────────────────────────── */
+@media (min-width: 1279px) {
+  .packs {
+    padding: 7rem 6rem 8rem;
+  }
+
+  .container {
+    max-width: 1400px;
+    gap: 2.5rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+}
+
+/* ────────────────────────────
+   Desktop 1536px
+──────────────────────────── */
+@media (min-width: 1536px) {
+  .packs {
+    padding: 8rem 7rem 9rem;
+  }
+
+  .container {
+    max-width: 1600px;
+    gap: 3rem;
+  }
+
+  .title {
+    font-size: 4.5rem;
+  }
+}

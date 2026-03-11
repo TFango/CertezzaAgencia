@@ -17,32 +17,116 @@
   color: #838383;
 }
 
+/* ── Mobile — Card original visible ── */
+.cardsMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cardsDesktop {
+  display: none;
+}
+
+/* ── Desktop card styles ── */
+.card {
+  border-radius: 28px;
+  overflow: hidden;
+  cursor: pointer;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2.5rem 3rem;
+  justify-content: space-between;
+}
+
+.marketing.card {
+  background: #2f1b3a;
+  border: 1px solid rgba(205, 154, 250, 0.25);
+}
+
+.web.card {
+  background: #0d2847;
+  border: 1px solid rgba(68, 155, 255, 0.25);
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.marketing .cardTitle { color: #d49dfb; }
+.web .cardTitle { color: #449bff; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.marketingTag { border: 1px solid #d7a1ff; color: #d7a1ff; }
+.webTag { border: 1px solid #449bff; color: #449bff; }
+
+.cardDescription {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #e3e3d9;
+}
+
+.number {
+  color: #e3e3d9;
+  font-size: 4rem;
+  font-weight: 800;
+  align-self: flex-end;
+}
+
+.titleIcon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
 /* ────────────────────────────
    Tablet
 ──────────────────────────── */
 @media (min-width: 767px) {
-
   .section {
-  display: flex;
-  flex-direction: column;
-  padding: 4rem 2.5rem;
-  background-color: #202020;
-  padding-bottom: 8rem;
-  gap: 4rem;
-}
+    padding: 4rem 2.5rem 8rem;
+    gap: 4rem;
+  }
+
   .title {
     font-size: 4rem;
   }
 
   .description {
-    color: #838383;
     font-size: 1.5rem;
   }
 }
 
+/* ────────────────────────────
+   Laptop
+──────────────────────────── */
 @media (min-width: 1023px) {
   .section {
-    padding: 6rem 4rem 8rem;
+    gap: 3rem;
+      padding: 6rem 5rem 8rem;
   }
 
   .info {
@@ -58,4 +142,92 @@
   .description {
     font-size: 1.6rem;
   }
+
+  .cardsMobile {
+    display: none;
+  }
+
+  .cardsDesktop {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: stretch;
+    min-height: 420px;
+  }
+}
+
+/* ────────────────────────────
+   Desktop 1280px
+──────────────────────────── */
+@media (min-width: 1279px) {
+  .section {
+    gap: 4rem;
+      padding: 7rem 8rem 9rem;
+  }
+
+  .info {
+    max-width: 1400px;
+  }
+
+  .title {
+    font-size: 5.5rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .cardsDesktop {
+    min-height: 500px;
+    gap: 1.25rem;
+  }
+
+  .card {
+    padding: 3rem 4rem;
+    border-radius: 32px;
+  }
+
+  .cardTitle { font-size: 4.5rem; }
+  .cardDescription { font-size: 1.2rem; }
+  .number { font-size: 5rem; }
+  .titleIcon { width: 48px; height: 48px; }
+  .tag { font-size: 1rem; padding: 6px 14px; }
+}
+
+/* ────────────────────────────
+   Desktop 1536px
+──────────────────────────── */
+@media (min-width: 1536px) {
+  .section {
+  padding: 8rem 7rem 20rem;
+    gap: 5rem;
+  }
+
+  .info {
+    max-width: 1600px;
+  }
+
+  .title {
+    font-size: 6.5rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+  }
+
+  .cardsDesktop {
+    min-height: 580px;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 3.5rem 5rem;
+    border-radius: 36px;
+  }
+
+  .cardTitle { font-size: 5.5rem; }
+  .cardDescription { font-size: 1.3rem; }
+  .number { font-size: 6rem; }
+  .titleIcon { width: 56px; height: 56px; }
+  .tag { font-size: 1.1rem; padding: 7px 16px; }
 }

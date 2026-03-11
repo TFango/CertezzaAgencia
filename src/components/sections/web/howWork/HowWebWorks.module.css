@@ -146,3 +146,93 @@
     font-size: 1rem;
   }
 }
+
+/* ────────────────────────────
+   Desktop 1280px
+──────────────────────────── */
+@media (min-width: 1279px) {
+  .section {
+    padding: 7rem 6rem 8rem;
+  }
+
+  .header {
+    max-width: 1400px;
+    margin: 0 auto 3.5rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    max-width: 640px;
+  }
+
+  .steps {
+    max-width: 1400px;
+    gap: 1.25rem;
+  }
+
+  .step {
+    padding: 3rem;
+    border-radius: 24px;
+  }
+
+  .number {
+    font-size: 0.95rem;
+  }
+
+  .stepTitle {
+    font-size: 1.4rem;
+  }
+
+  .stepText {
+    font-size: 1.2rem;
+  }
+}
+
+/* ────────────────────────────
+   Desktop 1536px
+──────────────────────────── */
+@media (min-width: 1536px) {
+  .section {
+    padding: 8rem 7rem 9rem;
+  }
+
+  .header {
+    max-width: 1600px;
+    margin: 0 auto 4rem;
+  }
+
+  .title {
+    font-size: 4.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    max-width: 720px;
+  }
+
+  .steps {
+    max-width: 1600px;
+    gap: 1.5rem;
+  }
+
+  .step {
+    padding: 3.5rem;
+    border-radius: 28px;
+  }
+
+  .number {
+    font-size: 1rem;
+  }
+
+  .stepTitle {
+    font-size: 1.5rem;
+  }
+
+  .stepText {
+    font-size: 1.3rem;
+  }
+}

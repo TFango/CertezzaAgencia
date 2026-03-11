@@ -185,3 +185,91 @@
     opacity: 0.4;
   }
 }
+
+/* ────────────────────────────
+   Desktop 1280px
+──────────────────────────── */
+@media (min-width: 1279px) {
+  .howWeWork {
+    padding: 7rem 6rem 8rem;
+  }
+
+  .container {
+    max-width: 1400px;
+    gap: 2.5rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .steps {
+    gap: 1.25rem;
+  }
+
+  .step {
+    padding: 2rem;
+    border-radius: 24px;
+  }
+
+  .stepNumber {
+    font-size: 0.95rem;
+  }
+
+  .stepTitle {
+    font-size: 1.5rem;
+  }
+
+  .stepDescription {
+    font-size: 1.2rem;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ────────────────────────────
+   Desktop 1536px
+──────────────────────────── */
+@media (min-width: 1536px) {
+  .howWeWork {
+    padding: 8rem 7rem 9rem;
+  }
+
+  .container {
+    max-width: 1600px;
+    gap: 3rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .steps {
+    gap: 1.5rem;
+  }
+
+  .step {
+    padding: 2.5rem;
+    border-radius: 28px;
+  }
+
+  .stepNumber {
+    font-size: 1rem;
+  }
+
+  .stepTitle {
+    font-size: 1.6rem;
+  }
+
+  .stepDescription {
+    font-size: 1.3rem;
+  }
+
+  .icon {
+    width: 26px;
+    height: 26px;
+  }
+}

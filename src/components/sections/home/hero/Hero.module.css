@@ -59,7 +59,7 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 90px;
+  margin-top: 30px;
 }
 
 .recomend {
@@ -149,39 +149,115 @@
 @media (min-width: 1023px) {
   .content {
     padding: 120px 5rem 40px;
-    text-align: left;
-    align-items: flex-start;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
   }
 
-  .info {
-    align-items: flex-start;
-    margin-top: 60px;
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+    justify-content: center;
   }
 
-  .title {
-    font-size: 5.5rem;
-  }
-
-  .subtitle {
-    font-size: 1.25rem;
-  }
-
-  .buttons {
-    justify-content: flex-start;
-    margin-top: 20px;
-  }
-
-  @media (min-width: 1023px) {
-    .recomend {
-      align-items: center;
-      width: 100%;
-    }
-  }
-
-  .divider {
+  .bottom {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    gap: 1rem;
+  }
+
+  .info {
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .buttons {
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .recomend {
+    align-items: center;
+    width: 100%;
+  }
+
+  .divider {
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1279px) {
+  .content {
+    padding: 140px 6rem 48px;
+  }
+
+  .center {
+    gap: 2rem;
+  }
+
+  .badge {
+    font-size: 0.85rem;
+    padding: 6px 20px;
+  }
+
+  .title {
+    font-size: 7rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .scroll {
+    font-size: 0.85rem;
+  }
+
+  .buttons {
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .content {
+    padding: 160px 8rem 56px;
+  }
+
+  .center {
+    gap: 2.5rem;
+  }
+
+  .badge {
+    font-size: 0.9rem;
+    padding: 7px 22px;
+  }
+
+  .title {
+    font-size: 8.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+  }
+
+  .scroll {
+    font-size: 0.9rem;
+  }
+
+  .buttons {
+    gap: 1.5rem;
   }
 }

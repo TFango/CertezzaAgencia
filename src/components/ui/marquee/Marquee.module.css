@@ -1,36 +1,39 @@
 .wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  width: 100%;
-  padding: 1rem 0;
+  gap: 1.25rem;
+  padding: 0.5rem 0;
+  overflow: hidden;
 }
 
 .label {
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.72rem;
+  line-height: 1;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+  text-align: center;
 }
 
 .marquee {
-  overflow: hidden;
+  position: relative;
   width: 100%;
-  /* Fade en los bordes */
+  overflow: hidden;
+
   mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 10%,
-    black 90%,
+    black 8%,
+    black 92%,
     transparent 100%
   );
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 10%,
-    black 90%,
+    black 8%,
+    black 92%,
     transparent 100%
   );
 }
@@ -38,45 +41,60 @@
 .track {
   display: flex;
   align-items: center;
-  gap: 4rem;
   width: max-content;
-  animation: scroll 25s linear infinite;
+  will-change: transform;
 }
 
-.track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.5rem;
+  min-height: 48px;
 }
 
 .brand {
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.25);
   white-space: nowrap;
-  letter-spacing: 0.05em;
-  transition: color 0.3s ease;
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 0.72;
+  font-size: clamp(1.1rem, 2vw, 2rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  transition: opacity 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 .brand:hover {
-  color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-1px);
 }
 
-@media (min-width: 1023px) {
+@media (min-width: 768px) {
   .wrapper {
-    align-items: flex-start;
+    gap: 1.5rem;
   }
 
-  .marquee {
-    width: 100%;
-    position: relative;
-    left: 0;
+  .item {
+    padding: 0 4.5rem;
+    min-height: 56px;
+  }
+
+  .label {
+    font-size: 0.78rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .item {
+    padding: 0 5.5rem;
+    min-height: 64px;
+  }
+
+  .brand {
+    font-size: 2.15rem;
   }
 }

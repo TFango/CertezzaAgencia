@@ -1,30 +1,19 @@
-.packs {
-  background: #111111;
-  padding: 4rem 1.25rem 6rem;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.title {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: #e3e3d9;
-  line-height: 1.2;
-}
-
-/* ── Cards ── */
-.cards {
+/* ── Mobile — apiladas ── */
+.cardsMobile {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-/* ── Card ── */
+.carouselDesktop {
+  display: none;
+}
 
+.dotsDesktop {
+  display: none;
+}
+
+/* ── Card base ── */
 .card {
   --card-bg: #1a1a1a;
   --page-bg: #111111;
@@ -38,13 +27,12 @@
   border: 1px solid var(--border-color);
   border-radius: 28px;
   padding: 1.5rem;
+  padding-top: 35px;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  padding-top: 35px;
 }
 
-/* recorte superior derecho */
 .card::before {
   content: "";
   position: absolute;
@@ -63,7 +51,6 @@
   --border-color: color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
-/* ── Top row ── */
 .cardTop {
   display: flex;
   justify-content: space-between;
@@ -76,6 +63,7 @@
   color: #838383;
   letter-spacing: 0.08em;
 }
+
 .toggleBtn {
   position: absolute;
   top: 8px;
@@ -105,7 +93,6 @@
   line-height: 1;
 }
 
-/* ── Título + ícono ── */
 .titleRow {
   display: flex;
   align-items: flex-start;
@@ -130,7 +117,6 @@
   margin-top: 2px;
 }
 
-/* ── Descripción ── */
 .cardDescription {
   font-size: 0.875rem;
   font-weight: 300;
@@ -138,7 +124,6 @@
   line-height: 1.6;
 }
 
-/* ── Ver más ── */
 .verMas {
   background: none;
   border: none;
@@ -156,7 +141,6 @@
   opacity: 0.75;
 }
 
-/* ── Items desplegables ── */
 .cardItems {
   border-top: 1px solid #2a2a2a;
   padding-top: 0.75rem;
@@ -190,91 +174,247 @@
   opacity: 0.7;
 }
 
+/* Ocultar en desktop */
+.cardIconMobile,
+.verMasMobile,
+.cardItemsMobile {
+  display: block;
+}
+
+.cardItemsDesktop {
+  display: none;
+}
+
+/* ────────────────────────────
+   Tablet
+──────────────────────────── */
 @media (min-width: 767px) {
-  .cards {
+  .cardsMobile {
     display: grid;
     gap: 0.75rem;
   }
 
   .cardNumber {
     font-size: 1.2rem;
-    font-weight: 500;
-    color: #838383;
-    letter-spacing: 0.08em;
   }
-
   .cardTitle {
     font-size: 1.5rem;
-    font-weight: 700;
-    color: #e3e3d9;
-    line-height: 1.3;
-    flex: 1;
   }
-
   .cardIcon {
     width: 26px;
     height: 26px;
-    object-fit: contain;
-    opacity: 0.5;
-    flex-shrink: 0;
-    margin-top: 2px;
   }
-
   .cardDescription {
     font-size: 1rem;
-    font-weight: 300;
-    color: #838383;
-    line-height: 1.6;
   }
-
   .verMas {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
     font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 0.04em;
-    text-align: left;
-    transition: opacity 0.2s ease;
   }
-
   .item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
     font-size: 1rem;
-    font-weight: 400;
-    color: #e3e3d9;
-    line-height: 1.4;
   }
 }
 
+/* ────────────────────────────
+   Laptop — activa carrusel
+──────────────────────────── */
 @media (min-width: 1023px) {
-  .card {
+  .cardsMobile {
+    display: none;
+  }
+
+  .carouselDesktop {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .dotsDesktop {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+  }
+
+  /* Flechas */
+  .arrow {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #2a2a2a;
+    background: #1a1a1a;
+    color: #e3e3d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .arrow:hover {
+    background: #2a2a2a;
+    border-color: #444444;
+  }
+
+  /* Track */
+  .carouselTrack {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .carouselCard {
+    width: 100%;
+  }
+
+  /* Card dentro del carrusel */
+  .carouselCard .card {
     padding: 2rem;
     padding-top: 40px;
+    height: 100%;
   }
 
   .cardTitle {
     font-size: 1.5rem;
   }
-
   .cardDescription {
     font-size: 1.2rem;
   }
-
   .verMas {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
     font-size: 1rem;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 0.04em;
-    text-align: left;
-    transition: opacity 0.2s ease;
+  }
+
+  /* Dots */
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: #2a2a2a;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .dotActive {
+    background: var(--accent);
+    transform: scale(1.3);
+  }
+
+  .cardIconMobile,
+  .verMasMobile,
+  .cardItemsMobile,
+  .toggleBtn {
+    display: none !important;
+  }
+
+  .cardItemsDesktop {
+    display: block;
+    border-top: 1px solid #2a2a2a;
+    padding-top: 0.75rem;
+  }
+
+  .card::before {
+    width: 0;
+    height: 0;
+  }
+}
+
+/* ────────────────────────────
+   Desktop 1280px
+──────────────────────────── */
+@media (min-width: 1279px) {
+  .carouselDesktop {
+    gap: 2rem;
+  }
+
+  .carouselTrack {
+    min-height: 380px;
+  }
+
+  .arrow {
+    width: 56px;
+    height: 56px;
+  }
+
+  .carouselCard .card {
+    padding: 2.5rem;
+    padding-top: 48px;
+    border-radius: 32px;
+    --cut-size: 64px;
+    --btn-size: 46px;
+  }
+
+  .cardNumber {
+    font-size: 1.3rem;
+  }
+  .cardTitle {
+    font-size: 1.75rem;
+  }
+  .cardIcon {
+    width: 30px;
+    height: 30px;
+  }
+  .cardDescription {
+    font-size: 1.2rem;
+  }
+  .verMas {
+    font-size: 1.05rem;
+  }
+  .item {
+    font-size: 1.2rem;
+  }
+}
+
+/* ────────────────────────────
+   Desktop 1536px
+──────────────────────────── */
+@media (min-width: 1536px) {
+  .carouselDesktop {
+    gap: 2.5rem;
+  }
+
+  .carouselTrack {
+    min-height: 440px;
+  }
+
+  .arrow {
+    width: 64px;
+    height: 64px;
+  }
+
+  .carouselCard .card {
+    padding: 3rem;
+    padding-top: 56px;
+    border-radius: 36px;
+    --cut-size: 72px;
+    --btn-size: 52px;
+  }
+
+  .cardNumber {
+    font-size: 1.4rem;
+  }
+  .cardTitle {
+    font-size: 2rem;
+  }
+  .cardIcon {
+    width: 34px;
+    height: 34px;
+  }
+  .cardDescription {
+    font-size: 1.3rem;
+  }
+  .verMas {
+    font-size: 1.1rem;
+  }
+  .item {
+    font-size: 1.3rem;
   }
 }

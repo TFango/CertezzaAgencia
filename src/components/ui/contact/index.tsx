@@ -42,6 +42,7 @@ export default function Contact({ variant = "home" }: Props) {
     email: "",
     service: defaultService,
     message: "",
+    honeypot: "",
   });
 
   const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");
@@ -66,7 +67,7 @@ export default function Contact({ variant = "home" }: Props) {
 
       if (res.ok) {
         setStatus("sent");
-        setForm({ name: "", email: "", service: defaultService, message: "" });
+        setForm({ name: "", email: "", service: defaultService, message: "", honeypot: "" });
       } else {
         setStatus("error");
       }
@@ -84,7 +85,17 @@ export default function Contact({ variant = "home" }: Props) {
         <p className={styles.subtitle}>{subtitle}</p>
 
         <form className={styles.form} onSubmit={handleSubmit}>
-          <input type="text" name="honeypot" style={{ display: "none" }} />
+
+          {/* Honeypot — trampa para bots */}
+          <input
+            type="text"
+            name="honeypot"
+            value={form.honeypot}
+            onChange={handleChange}
+            style={{ display: "none" }}
+            tabIndex={-1}
+            autoComplete="off"
+          />
 
           <input
             name="name"

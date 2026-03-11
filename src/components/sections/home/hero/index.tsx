@@ -12,36 +12,40 @@ export default function Hero() {
       <ParticlesCanvas />
 
       <div className={styles.content}>
-        <div className={styles.info}>
-          <span className={styles.badge}>AGENCIA DIGITAL</span>
-          <h1 className={styles.title}>
-            Convertimos ideas en <br /> <AnimatedWord />
-          </h1>
-          <p className={styles.subtitle}>
-            Creamos webs y estrategias digitales 
-            que atraen clientes y potencian tu negocio
-          </p>
+        {/* Bloque central */}
+        <div className={styles.center}>
+          <div className={styles.info}>
+            <span className={styles.badge}>AGENCIA DIGITAL</span>
+            <h1 className={styles.title}>
+              Convertimos ideas en <br /> <AnimatedWord />
+            </h1>
+            <p className={styles.subtitle}>
+              Creamos webs y estrategias digitales que atraen clientes y
+              potencian tu negocio
+            </p>
+          </div>
+          <div className={styles.buttons}>
+            <Link href="#servicios">
+              <Button variant="primary">Ver servicios</Button>
+            </Link>
+            <Link href="#contacto">
+              <Button variant="secondary">Contactar</Button>
+            </Link>
+          </div>
         </div>
 
-        <div className={styles.buttons}>
-          <Link href="#servicios">
-            <Button variant="primary">Ver servicios</Button>
-          </Link>
-          <Link href="#contacto">
-            <Button variant="secondary">Contactar</Button>
-          </Link>
-        </div>
-
-        <div className={styles.recomend}>
-          <p className={styles.description}>Ellos confiaron en nosotros</p>
-          <Marquee />
-        </div>
-
-        <div className={styles.divider}>
-          <hr className={styles.hr} />
-          <p className={styles.scroll}>SCROLL</p>
-          <img src="/icons/arrow.svg" alt="scroll" />
-          <div className={styles.dot}></div>
+        {/* Bloque inferior */}
+        <div className={styles.bottom}>
+          <div className={styles.recomend}>
+            <p className={styles.description}>Ellos confiaron en nosotros</p>
+            <Marquee />
+          </div>
+          <div className={styles.divider}>
+            <hr className={styles.hr} />
+            <p className={styles.scroll}>SCROLL</p>
+            <img src="/icons/arrow.svg" alt="scroll" />
+            <div className={styles.dot}></div>
+          </div>
         </div>
       </div>
     </section>
