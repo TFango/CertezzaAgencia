@@ -8,6 +8,7 @@ import { Inter } from "next/font/google";
 
 import type { Metadata } from "next";
 import Script from "next/script";
+import WppButton from "@/components/ui/wppButton";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://certezza.com.ar"),
@@ -85,6 +86,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <WppButton />
         </AppWrapper>
 
         <Script
