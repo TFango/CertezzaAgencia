@@ -11,8 +11,14 @@ const data = {
   marketing: {
     title: "Marketing Digital",
     icon: "/icons/marketing.svg",
-    tags: ["Redes Sociales", "Gestión de Contenido", "Publicidad Digital", "SEO", "Estrategias"],
-    description: "Llevamos tu marca a las personas correctas en el momento justo. Estrategias que generan visibilidad, engagement y ventas.",
+    tags: [
+      "Redes Sociales",
+      "Gestión de Contenido",
+      "Publicidad Digital",
+      "Estrategias",
+    ],
+    description:
+      "Llevamos tu marca a las personas correctas en el momento justo. Estrategias que generan visibilidad, engagement y ventas.",
     href: "/servicios/marketing",
     number: "1",
     tagClass: "marketingTag",
@@ -21,8 +27,15 @@ const data = {
   web: {
     title: "Desarrollo Web",
     icon: "/icons/web.svg",
-    tags: ["Landing Page", "Web Corporativa", "E-Commerce", "Diseño UX/UI", "Figma"],
-    description: "Creamos sitios que convierten visitas en clientes. Rápidos, modernos y optimizados para que tu negocio se vea profesional desde el primer clic.",
+    tags: [
+      "Landing Page",
+      "Web Corporativa",
+      "E-Commerce",
+      "Diseño UX/UI",
+      "Figma",
+    ],
+    description:
+      "Creamos sitios que convierten visitas en clientes. Rápidos, modernos y optimizados para que tu negocio se vea profesional desde el primer clic.",
     href: "/servicios/web",
     number: "2",
     tagClass: "webTag",
@@ -85,11 +98,21 @@ export default function Services() {
             >
               <div className={styles.titleRow}>
                 <h2 className={styles.cardTitle}>{d.title}</h2>
-                <img src={d.icon} alt="" className={styles.titleIcon} aria-hidden="true" />
+                <img
+                  src={d.icon}
+                  alt=""
+                  className={styles.titleIcon}
+                  aria-hidden="true"
+                />
               </div>
               <div className={styles.tags}>
                 {d.tags.map((tag) => (
-                  <p key={tag} className={`${styles.tag} ${styles[d.tagClass]}`}>{tag}</p>
+                  <p
+                    key={tag}
+                    className={`${styles.tag} ${styles[d.tagClass]}`}
+                  >
+                    {tag}
+                  </p>
                 ))}
               </div>
               <p className={styles.cardDescription}>{d.description}</p>
