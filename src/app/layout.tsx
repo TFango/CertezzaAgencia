@@ -16,6 +16,13 @@ export const metadata: Metadata = {
   },
   description:
     "Certezza es una agencia especializada en marketing digital y desarrollo web en Mar del Plata. Creamos sitios web profesionales y estrategias digitales que convierten visitas en clientes.",
+
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
+
   keywords: [
     "agencia digital Mar del Plata",
     "desarrollo web Mar del Plata",
