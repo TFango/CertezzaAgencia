@@ -82,7 +82,7 @@ function MetricCard({
           : {}
       }
       transition={{ duration: 0.8, delay, ease: "easeOut" }}
-      whileTap={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.06)" }}
+      //whileTap={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.06)" }}
     >
       <img src={icon} alt="" className={styles.logo} />
       <p className={styles.percent}>
