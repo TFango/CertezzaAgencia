@@ -38,7 +38,7 @@ export default function Hero() {
         <div className={styles.bottom}>
           <div className={styles.recomend}>
             <p className={styles.description}>Ellos confiaron en nosotros</p>
-            <Marquee />
+            {/* <Marquee /> */}
           </div>
           <div className={styles.divider}>
             <hr className={styles.hr} />
