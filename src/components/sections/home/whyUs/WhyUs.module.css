@@ -218,46 +218,46 @@
 ──────────────────────────── */
 @media (min-width: 1536px) {
   .whyUs {
-    padding: 8rem 7rem 9rem;
+    padding: 7rem 6rem 8rem;
   }
 
   .container {
-    max-width: 1600px;
-    gap: 8rem;
+    max-width: 1500px;
+    gap: 6rem;
   }
 
   .info {
-    max-width: 580px;
+    max-width: 500px;
   }
 
   .title {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
 
   .subtitle {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .articles {
-    gap: 20px;
+    gap: 16px;
   }
 
   .article {
-    padding: 40px 32px;
-    border-radius: 28px;
+    padding: 36px 28px;
+    border-radius: 24px;
   }
 
   .logo {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .percent {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .infoArticle {
-    font-size: 1.3rem;
-    max-width: 380px;
+    font-size: 1.2rem;
+    max-width: 340px;
   }
 }

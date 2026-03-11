@@ -66,15 +66,15 @@
 ──────────────────────────── */
 @media (min-width: 1536px) {
   .packs {
-    padding: 8rem 7rem 9rem;
+    padding: 7rem 6rem 8rem;
   }
 
   .container {
-    max-width: 1600px;
-    gap: 3rem;
+    max-width: 1500px;
+    gap: 2.5rem;
   }
 
   .title {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
 }

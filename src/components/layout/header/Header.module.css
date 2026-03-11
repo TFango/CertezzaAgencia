@@ -310,20 +310,20 @@
 ──────────────────────────── */
 @media (min-width: 1536px) {
   .container {
-    max-width: 1320px;
-    height: 60px;
-    padding: 16px 48px;
+    max-width: 1200px;
+    height: 56px;
+    padding: 14px 32px;
   }
 
   .logo {
-    width: 130px;
+    width: 110px;
   }
 
   .desktopNav {
-    gap: 2.75rem;
+    gap: 2rem;
   }
 
   .desktopNavItem {
-    font-size: 1.2rem;
+    font-size: 0.92rem;
   }
 }

@@ -167,31 +167,31 @@
 
 @media (min-width: 1536px) {
   .footer {
-    padding: 7rem 6rem 4rem;
+    padding: 6rem 5rem 3.5rem;
   }
 
   .container {
-    max-width: 1600px;
-    gap: 3rem;
+    max-width: 1500px;
+    gap: 2.5rem;
   }
 
   .grid {
-    gap: 3rem;
+    gap: 2.5rem;
   }
 
   .logo {
-    width: 220px;
+    width: 200px;
   }
 
   .colTitle {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 
   .link {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .copy {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 }

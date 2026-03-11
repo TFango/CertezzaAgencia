@@ -229,35 +229,35 @@
 
 @media (min-width: 1536px) {
   .content {
-    padding: 160px 8rem 56px;
+    padding: 140px 6rem 48px;
   }
 
   .center {
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   .badge {
-    font-size: 0.9rem;
-    padding: 7px 22px;
+    font-size: 0.88rem;
+    padding: 6px 20px;
   }
 
   .title {
-    font-size: 8.5rem;
+    font-size: 7.5rem;
   }
 
   .subtitle {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .description {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .scroll {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .buttons {
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 }
