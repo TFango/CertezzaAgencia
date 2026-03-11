@@ -12,7 +12,6 @@ const tags = {
     "Redes Sociales",
     "Gestión de Contenido",
     "Publicidad Digital",
-    "SEO",
     "Estrategias",
   ],
   web: [
