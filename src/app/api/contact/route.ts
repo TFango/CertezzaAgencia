@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     if (isRateLimited(ip)) {
       return Response.json(
         { error: "Demasiadas solicitudes, esperá un momento" },
-        { status: 429 }
+        { status: 429 },
       );
     }
 
@@ -65,7 +65,10 @@ export async function POST(req: Request) {
     }
 
     if (name.length > 100 || message.length > 2000) {
-      return Response.json({ error: "Campos demasiado largos" }, { status: 400 });
+      return Response.json(
+        { error: "Campos demasiado largos" },
+        { status: 400 },
+      );
     }
 
     // Sanitizá antes de meter en HTML
@@ -75,8 +78,9 @@ export async function POST(req: Request) {
     const safeMessage = escapeHtml(message);
 
     await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "fakuj305@gmail.com",
+      from: "Certezza <contacto@certezza.com.ar>",
+      to: ["certezzaempresa@gmail.com"],
+      replyTo: safeEmail,
       subject: `Nueva consulta de ${safeName}`,
       html: `
         <h2>Nueva consulta desde certezza.com.ar</h2>
