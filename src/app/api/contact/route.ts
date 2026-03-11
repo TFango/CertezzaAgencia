@@ -79,7 +79,7 @@ export async function POST(req: Request) {
 
     await resend.emails.send({
       from: "Certezza <contacto@certezza.com.ar>",
-      to: ["certezzaempresa@gmail.com"],
+      to: ["certezzaagencia@gmail.com"],
       replyTo: safeEmail,
       subject: `Nueva consulta de ${safeName}`,
       html: `
