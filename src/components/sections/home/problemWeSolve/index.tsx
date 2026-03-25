@@ -107,11 +107,6 @@ export default function ProblemWeSolve() {
               pero tu presencia digital no lo refleja?
             </span>
           </h2>
-          <p className={styles.description}>
-            Las marcas pierden clientes todos los días por no tener una web
-            profesional, redes sin estrategia y anuncios que no convierten. El
-            problema no es tu producto, es cómo lo estás comunicando.
-          </p>
           <p className={styles.subtitle}>
             Certezza combina desarrollo web y marketing digital para que tu
             negocio se vea como lo que es: una opción seria.
@@ -130,30 +125,38 @@ export default function ProblemWeSolve() {
           </motion.h2>
 
           {/* Mobile/Tablet — carrusel horizontal */}
-          <div className={styles.carouselWrapper} ref={dragRef}>
-            <motion.div
-              ref={cardsRef}
-              className={styles.cards}
-              drag="x"
-              dragConstraints={getConstraints()}
-              dragElastic={0.08}
-              dragTransition={{ bounceStiffness: 100, bounceDamping: 20 }}
-              whileDrag={{ cursor: "grabbing" }}
-            >
-              {cards.map((card, i) => (
-                <motion.div
-                  key={i}
-                  className={styles.card}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <h3 className={styles.titleCard}>{card.title}</h3>
-                  <p className={styles.descriptionCard}>{card.description}</p>
-                </motion.div>
-              ))}
-            </motion.div>
+          <div className={styles.carouselOuter}>
+            <div className={styles.carouselWrapper} ref={dragRef}>
+              <motion.div
+                ref={cardsRef}
+                className={styles.cards}
+                drag="x"
+                dragConstraints={getConstraints()}
+                dragElastic={0.08}
+                dragTransition={{ bounceStiffness: 100, bounceDamping: 20 }}
+                whileDrag={{ cursor: "grabbing" }}
+              >
+                {cards.map((card, i) => (
+                  <motion.div
+                    key={i}
+                    className={styles.card}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <h3 className={styles.titleCard}>{card.title}</h3>
+                    <p className={styles.descriptionCard}>{card.description}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Flechas indicadoras */}
+            <div className={styles.carouselHint}>
+              <span className={styles.hintArrow}>←</span>
+              <span className={styles.hintText}>deslizá</span>
+              <span className={styles.hintArrow}>→</span>
+            </div>
           </div>
 
-          {/* Laptop — cards verticales automáticas */}
           <DesktopCards />
         </div>
       </div>

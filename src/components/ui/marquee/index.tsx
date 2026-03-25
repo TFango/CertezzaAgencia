@@ -4,16 +4,8 @@ import { useEffect, useRef } from "react";
 import styles from "./Marquee.module.css";
 
 const BRANDS = [
-  "Vignétique",
-  "OXIDELTA",
-  "MC",
-  "WESTGROWTH",
-  "Ality",
-  "l2 twelve",
-  "SOLEIL",
-  "kooki",
-  "GRAND Utilaje",
-  "OFF AUTO",
+  "CapdevilaSoldadura",
+
 ];
 
 export default function Marquee() {

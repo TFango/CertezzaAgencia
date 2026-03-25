@@ -1,12 +1,20 @@
 import styles from "./Footer.module.css";
 import Link from "next/link";
 
-const links = ["Inicio", "Servicios", "Sobre nosotros", "Contacto"];
-const services = ["Desarrollo Web", "Marketing Digital"];
+const links = [
+  { label: "Inicio", href: "/" },
+  { label: "Servicios", href: "/#servicios" },
+  { label: "Por qué elegirnos", href: "/#porQueElegirnos" },
+  { label: "Como trabajmos", href: "/#comoTrabajamos" },
+  { label: "Contacto", href: "/#contacto" },
+];
+const services = [
+  { label: "Desarrollo Web", href: "/servicios/web" },
+  { label: "Marketing Digital", href: "/servicios/marketing" },
+];
 const socials = [
-  { name: "Instagram", href: "https://instagram.com/certezza" },
-  { name: "LinkedIn", href: "https://linkedin.com/company/certezza" },
-  { name: "Facebook", href: "https://facebook.com/certezza" },
+  { name: "Instagram", href: "https://instagram.com/certezzaagencia" },
+  { name: "LinkedIn", href: "https://linkedin.com/company/certezza-agencia" },
 ];
 
 export default function Footer() {
@@ -18,9 +26,9 @@ export default function Footer() {
             <p className={styles.colTitle}>Links</p>
             <ul className={styles.list}>
               {links.map((l) => (
-                <li key={l}>
-                  <Link href="#" className={styles.link}>
-                    {l}
+                <li key={l.label}>
+                  <Link href={l.href} className={styles.link}>
+                    {l.label}
                   </Link>
                 </li>
               ))}
@@ -49,9 +57,9 @@ export default function Footer() {
             <p className={styles.colTitle}>Servicios</p>
             <ul className={styles.list}>
               {services.map((s) => (
-                <li key={s}>
-                  <Link href="#" className={styles.link}>
-                    {s}
+                <li key={s.label}>
+                  <Link href={s.href} className={styles.link}>
+                    {s.label}
                   </Link>
                 </li>
               ))}

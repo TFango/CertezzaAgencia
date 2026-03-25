@@ -1,5 +1,4 @@
 import styles from "./Card.module.css";
-
 import Button from "../button";
 import Link from "next/link";
 
@@ -39,11 +38,22 @@ const icons = {
   web: "/icons/web.svg",
 };
 
+const numbers = {
+  marketing: "01",
+  web: "02",
+};
+
 export default function Card({ variant }: Props) {
   return (
     <div className={`${styles.card} ${styles[variant]}`}>
+
+      {/* Badge número */}
+      <span className={styles.badge}>
+        Servicio {numbers[variant]}
+      </span>
+
       <div className={styles.titleRow}>
-        <h1 className={styles.title}>{titles[variant]}</h1>
+        <h2 className={styles.title}>{titles[variant]}</h2>
         <img
           src={icons[variant]}
           alt=""
@@ -63,16 +73,13 @@ export default function Card({ variant }: Props) {
       <p className={styles.description}>{descriptions[variant]}</p>
 
       <Link
-        href={
-          variant === "marketing" ? "/servicios/marketing" : "/servicios/web"
-        }
+        href={variant === "marketing" ? "/servicios/marketing" : "/servicios/web"}
       >
         <Button variant={variant === "marketing" ? "cardMarketing" : "cardWeb"}>
-          Mas info
+          Ver servicio completo →
         </Button>
       </Link>
 
-      <p className={styles.number}>{variant === "marketing" ? "1" : "2"}</p>
     </div>
   );
 }

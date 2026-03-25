@@ -1,11 +1,14 @@
 .card {
   border-radius: 24px;
-  padding: 2rem 3rem 2rem 3rem;
+  padding: 2rem 3rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   position: sticky;
   top: 80px;
+  transition: border-color 0.3s ease;
+  min-height: 500px;
+  /* justify-content: space-between; */
 }
 
 .card:nth-child(2) {
@@ -17,9 +20,32 @@
   border: 1px solid rgba(205, 154, 250, 0.25);
 }
 
+.marketing:hover {
+  border-color: rgba(205, 154, 250, 0.5);
+}
+
 .web {
   background: #0d2847;
   border: 1px solid rgba(68, 155, 255, 0.25);
+}
+
+.web:hover {
+  border-color: rgba(68, 155, 255, 0.5);
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  color: #838383;
+  border: 1px solid #333333;
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .title {
@@ -45,8 +71,8 @@
 .tag {
   font-size: 0.75rem;
   font-weight: 600;
-  padding: 5px 10px;
-  border-radius: 3px;
+  padding: 5px 12px;
+  border-radius: 999px;
 }
 
 .marketingTag {
@@ -64,33 +90,31 @@
   font-weight: 300;
   line-height: 1.7;
   color: #e3e3d9;
-  margin-bottom: 30px;
-}
-
-.number {
-  color: #e3e3d9;
-  font-size: 3rem;
-  font-weight: 800;
-  align-self: flex-end;
 }
 
 .titleRow {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.6rem;
 }
 
 .titleIcon {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
+  opacity: 0.7;
 }
 
+/* ────────────────────────────
+   Tablet
+──────────────────────────── */
 @media (min-width: 767px) {
   .card {
     padding: 1.5rem 2rem;
     max-width: 480px;
     margin: 0 auto;
+    min-height: 360px;
   }
 
   .title {
@@ -99,23 +123,16 @@
 
   .description {
     font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.7;
-    color: #e3e3d9;
-    margin-bottom: 30px;
-  }
-  .number {
-    font-size: 3.5rem;
   }
 
   .tag {
     font-size: 0.9rem;
-    font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 3px;
   }
 }
 
+/* ────────────────────────────
+   Laptop
+──────────────────────────── */
 @media (min-width: 1023px) {
   .card {
     max-width: 1100px;
@@ -127,12 +144,13 @@
     font-size: 3.5rem;
   }
 
-  .number {
-    font-size: 4rem;
-  }
-
   .description {
     font-size: 1.05rem;
+  }
+
+  .titleIcon {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -143,14 +161,16 @@
   .card {
     padding: 3rem 4rem;
     border-radius: 28px;
+    position: sticky;
+    top: 120px;
+  }
+
+  .card:nth-child(2) {
+    top: 200px;
   }
 
   .title {
     font-size: 4.5rem;
-  }
-
-  .number {
-    font-size: 5rem;
   }
 
   .description {
@@ -159,21 +179,16 @@
 
   .tag {
     font-size: 1rem;
-    padding: 6px 14px;
+    padding: 6px 16px;
   }
 
   .titleIcon {
-    width: 36px;
-    height: 36px;
+    width: 48px;
+    height: 48px;
   }
 
-  .card {
-    position: sticky;
-    top: 120px;
-  }
-
-  .card:nth-child(2) {
-    top: 200px;
+  .badge {
+    font-size: 0.78rem;
   }
 }
 
@@ -184,14 +199,15 @@
   .card {
     padding: 3.5rem 5rem;
     border-radius: 32px;
+    top: 120px;
+  }
+
+  .card:nth-child(2) {
+    top: 200px;
   }
 
   .title {
     font-size: 5.5rem;
-  }
-
-  .number {
-    font-size: 6rem;
   }
 
   .description {
@@ -200,20 +216,15 @@
 
   .tag {
     font-size: 1.1rem;
-    padding: 7px 16px;
+    padding: 7px 18px;
   }
 
   .titleIcon {
-    width: 42px;
-    height: 42px;
+    width: 56px;
+    height: 56px;
   }
 
-  .card {
-    position: sticky;
-    top: 120px;
-  }
-
-  .card:nth-child(2) {
-    top: 200px;
+  .badge {
+    font-size: 0.82rem;
   }
 }

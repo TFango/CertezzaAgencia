@@ -42,6 +42,7 @@
   padding-left: 1rem;
   border-left: 2px solid rgba(198, 176, 153, 0.4);
   text-align: center;
+  margin-top: 20px;
 }
 
 /* ── Identify ── */
@@ -126,8 +127,37 @@
   display: none;
 }
 
+/* ── Hint carrusel mobile ── */
+.carouselOuter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.carouselHint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hintArrow {
+  font-size: 0.85rem;
+  color: rgba(198, 176, 153, 0.5);
+}
+
+.hintText {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(198, 176, 153, 0.4);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Ocultá el hint en laptop+ */
+
 /* ────────────────────────────
-   Tablet
+Tablet
 ──────────────────────────── */
 @media (min-width: 767px) {
   .problemWeSolve {
@@ -155,9 +185,13 @@
 }
 
 /* ────────────────────────────
-   Laptop
+Laptop
 ──────────────────────────── */
 @media (min-width: 1023px) {
+  .carouselOuter {
+    display: none;
+  }
+
   .problemWeSolve {
     padding: 6rem 4rem;
   }
@@ -270,7 +304,7 @@
 }
 
 /* ────────────────────────────
-   Desktop 1280px
+Desktop 1280px
 ──────────────────────────── */
 @media (min-width: 1279px) {
   .problemWeSolve {
