@@ -87,6 +87,8 @@ export default function ParticlesCanvas() {
   return (
     <canvas
       ref={canvasRef}
+      aria-hidden="true"
+      role="presentation"
       style={{
         position: "absolute",
         top: 0,

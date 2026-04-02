@@ -5,7 +5,7 @@ const links = [
   { label: "Inicio", href: "/" },
   { label: "Servicios", href: "/#servicios" },
   { label: "Por qué elegirnos", href: "/#porQueElegirnos" },
-  { label: "Como trabajmos", href: "/#comoTrabajamos" },
+  { label: "Como trabajamos", href: "/#comoTrabajamos" },
   { label: "Contacto", href: "/#contacto" },
 ];
 const services = [
