@@ -20,8 +20,8 @@ export default function Hero() {
               Convertimos ideas en <br /> <AnimatedWord />
             </h1>
             <p className={styles.subtitle}>
-              Creamos webs y estrategias digitales que atraen clientes y
-              potencian tu negocio
+              Agencia digital en Mar del Plata. Creamos webs y estrategias
+              digitales que atraen clientes y potencian tu negocio.
             </p>
           </div>
           <div className={styles.buttons}>

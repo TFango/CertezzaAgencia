@@ -161,15 +161,6 @@ export default function Header() {
                   />
                 </a>
               </div>
-              <button
-                className={styles.langButton}
-                disabled
-                title="Próximamente"
-              >
-                <span className={styles.langActive}>ES</span>
-                <span className={styles.langDivider}>/</span>
-                <span className={styles.langInactive}>EN</span>
-              </button>
             </div>
           </motion.div>
         )}
