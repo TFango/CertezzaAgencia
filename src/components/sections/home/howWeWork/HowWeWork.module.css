@@ -1,23 +1,48 @@
-.howWeWork {
+/* ══════════════════════════════════════
+   Visibilidad por breakpoint
+══════════════════════════════════════ */
+
+.showMobile {
+  display: block;
+}
+
+.showDesktop {
+  display: none;
+}
+
+@media (min-width: 1023px) {
+  .showMobile {
+    display: none;
+  }
+
+  .showDesktop {
+    display: block;
+  }
+}
+
+/* ══════════════════════════════════════
+   MOBILE — diseño original
+══════════════════════════════════════ */
+
+.mHowWeWork {
   background: #2b2b2b;
   padding: 4rem 1.5rem 6rem;
 }
 
-.container {
+.mContainer {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.title {
+.mTitle {
   font-size: 1.75rem;
   font-weight: 800;
   color: #e3e3d9;
   line-height: 1.2;
 }
 
-/* ── Steps ── */
-.steps {
+.mSteps {
   display: flex;
   flex-direction: column;
   background: #222222;
@@ -26,8 +51,7 @@
   overflow: hidden;
 }
 
-/* ── Step ── */
-.step {
+.mStep {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -35,44 +59,42 @@
   border-bottom: 1px solid #333333;
 }
 
-.step:last-child {
+.mStep:last-child {
   border-bottom: none;
 }
 
-/* ── Header de cada etapa ── */
-.stepHeader {
+.mStepHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.stepNumber {
+.mStepNumber {
   font-size: 0.8rem;
   font-weight: 400;
   color: #838383;
   letter-spacing: 0.04em;
 }
 
-.stepTitleRow {
+.mStepTitleRow {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.stepTitle {
+.mStepTitle {
   font-size: 0.95rem;
   font-weight: 600;
   color: #e3e3d9;
 }
 
-.icon {
+.mIcon {
   width: 18px;
   height: 18px;
   opacity: 0.6;
 }
 
-/* ── Descripción ── */
-.stepDescription {
+.mStepDescription {
   font-size: 0.875rem;
   font-weight: 300;
   color: #838383;
@@ -80,196 +102,318 @@
   text-align: center;
 }
 
-/* ────────────────────────────
-   Tablet
-──────────────────────────── */
+/* Tablet */
 @media (min-width: 767px) {
-  .howWeWork {
+  .mHowWeWork {
     padding: 5rem 2.5rem 6rem;
   }
 
-  .title {
+  .mTitle {
     font-size: 2.25rem;
   }
 
-  .stepTitle {
+  .mStepTitle {
     font-size: 1.1rem;
   }
 
-  .stepDescription {
+  .mStepDescription {
     font-size: 0.95rem;
     text-align: left;
   }
 
-  .stepNumber {
+  .mStepNumber {
     font-size: 0.9rem;
   }
 }
 
-/* ────────────────────────────
-   Laptop
-──────────────────────────── */
-@media (min-width: 1023px) {
-  .howWeWork {
-    padding: 6rem 4rem 7rem;
-  }
+/* ══════════════════════════════════════
+   DESKTOP — nuevo diseño (1023px+)
+══════════════════════════════════════ */
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .title {
-    font-size: 2.75rem;
-  }
-
-  /* Fila horizontal de cards separadas */
-  .steps {
-    display: flex;
-    flex-direction: row;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    overflow: visible;
-    gap: 1rem;
-    align-items: stretch;
-  }
-
-  /* Cards cuadradas individuales */
-  .step {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.75rem;
-    background: #222222;
-    border: 1px solid #333333;
-    border-radius: 20px;
-    border-bottom: 1px solid #333333;
-    justify-content: space-between;
-  }
-
-  .step:last-child {
-    border-bottom: 1px solid #333333;
-  }
-
-  .stepHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .stepTitleRow {
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .stepTitle {
-    font-size: 1.3rem;
-    font-weight: 700;
-  }
-
-  .stepNumber {
-    font-size: 0.9rem;
-  }
-
-  .stepDescription {
-    font-size: 1rem;
-    text-align: left;
-    color: #636363;
-  }
-
-  .icon {
-    width: 20px;
-    height: 20px;
-    opacity: 0.4;
-  }
+.dHowWeWork {
+  background: #202020;
+  padding: 6rem 4rem 7rem;
 }
 
-/* ────────────────────────────
-   Desktop 1280px
-──────────────────────────── */
+.dContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Encabezado ── */
+.dHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 1rem;
+  border: 1.5px solid #555555;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #838383;
+  background: transparent;
+  width: fit-content;
+}
+
+.dTitle {
+  font-size: clamp(5rem, 10vw, 9rem);
+  font-weight: 900;
+  color: #e3e3d9;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.dSubtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #838383;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.dSubtitle em {
+  font-style: normal;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: #e3e3d9;
+}
+
+/* ── Timeline horizontal ── */
+.dTimeline {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+}
+
+/* Línea horizontal */
+.dTimeline::before {
+  content: "";
+  position: absolute;
+  top: 44px;
+  left: 44px;
+  right: 44px;
+  height: 1.5px;
+  background: #333333;
+  z-index: 0;
+}
+
+/* Cada paso */
+.dStep {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.25s ease;
+}
+
+/* ── Ícono ── */
+.dIconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  background: #2b2b2b;
+  border: 1px solid #333333;
+  border-radius: 26px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
+
+.dIconWrapper svg {
+  width: 36px;
+  height: 36px;
+  color: #e3e3d9;
+  stroke: currentColor;
+}
+
+.dIconSvg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e3e3d9;
+  transition: color 0.25s ease;
+}
+
+.dIconSvg svg {
+  width: 36px;
+  height: 36px;
+  stroke: currentColor;
+}
+
+.dStepBadge {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 28px;
+  height: 28px;
+  background: #e3e3d9;
+  color: #202020;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Texto del paso ── */
+.dStepContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+.dStepTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e3e3d9;
+  line-height: 1.2;
+}
+
+.dStepDescription {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #838383;
+  line-height: 1.6;
+  max-width: 22ch;
+}
+
+/* ── CTA ── */
+.dCta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.dCtaText {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #838383;
+  margin: 0;
+}
+
+.dCtaText em {
+  font-style: normal;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: #e3e3d9;
+  font-weight: 500;
+}
+
+.dCtaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  background: #e3e3d9;
+  color: #202020;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dCtaButton:hover {
+  background: #c6b099;
+  transform: translateY(-1px);
+}
+
+.dCtaArrow {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.dCtaButton:hover .dCtaArrow {
+  transform: translateX(3px);
+}
+
+/* ════════════════════════════════════
+   Desktop XL — 1279px
+════════════════════════════════════ */
 @media (min-width: 1279px) {
-  .howWeWork {
+  .dHowWeWork {
     padding: 7rem 6rem 8rem;
   }
 
-  .container {
+  .dContainer {
     max-width: 1400px;
-    gap: 2.5rem;
+    gap: 3.5rem;
   }
 
-  .title {
-    font-size: 3.5rem;
+  .dTimeline::before {
+    top: 50px;
+    left: 50px;
+    right: 50px;
   }
 
-  .steps {
-    gap: 1.25rem;
+  .dIconWrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 28px;
   }
 
-  .step {
-    padding: 2rem;
-    border-radius: 24px;
+  .dIconWrapper svg {
+    width: 40px;
+    height: 40px;
   }
 
-  .stepNumber {
-    font-size: 0.95rem;
+  .dStepBadge {
+    width: 30px;
+    height: 30px;
+    font-size: 0.7rem;
+    bottom: -11px;
+    right: -11px;
   }
 
-  .stepTitle {
-    font-size: 1.5rem;
-  }
-
-  .stepDescription {
+  .dStepTitle {
     font-size: 1.2rem;
   }
 
-  .icon {
-    width: 24px;
-    height: 24px;
+  .dStepDescription {
+    font-size: 0.95rem;
+    max-width: 24ch;
   }
 }
 
-/* ────────────────────────────
-   Desktop 1536px
-──────────────────────────── */
+/* ════════════════════════════════════
+   Ultra-wide — 1536px
+════════════════════════════════════ */
 @media (min-width: 1536px) {
-  .howWeWork {
-    padding: 7rem 6rem 8rem;
-  }
-
-  .container {
+  .dContainer {
     max-width: 1500px;
-    gap: 2.5rem;
   }
 
-  .title {
-    font-size: 3.5rem;
+  .dStepTitle {
+    font-size: 1.3rem;
   }
 
-  .steps {
-    gap: 1.25rem;
-  }
-
-  .step {
-    padding: 2rem;
-    border-radius: 24px;
-  }
-
-  .stepNumber {
-    font-size: 0.95rem;
-  }
-
-  .stepTitle {
-    font-size: 1.4rem;
-  }
-
-  .stepDescription {
-    font-size: 1.1rem;
-  }
-
-  .icon {
-    width: 22px;
-    height: 22px;
+  .dStepDescription {
+    font-size: 1rem;
+    max-width: 26ch;
   }
 }
