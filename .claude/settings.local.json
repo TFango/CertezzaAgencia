@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm install:*)",
       "Bash(grep -n 'id=' f:/programacion/certezza-web/src/components/sections/marketing/**/*.tsx f:/programacion/certezza-web/src/components/sections/web/**/*.tsx)",
-      "Bash(grep -v '//')"
+      "Bash(grep -v '//')",
+      "Bash(pnpm install:*)"
     ]
   }
 }
