@@ -1,16 +1,50 @@
+/* ══════════════════════════════════════
+   Sección base
+══════════════════════════════════════ */
+
 .contact {
   position: relative;
   overflow: hidden;
   background: #2b2b2b;
 }
 
+/* ── Layout: columna única en mobile ── */
 .content {
   position: relative;
   z-index: 1;
-  padding: 50px 1.5rem 4rem;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  padding: 4rem 1.5rem;
+  gap: 2.5rem;
+}
+
+/* ══════════════════════════════════════
+   Columna izquierda
+══════════════════════════════════════ */
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.leftInner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  width: fit-content;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #838383;
+  border: 1px solid #3a3a3a;
+  border-radius: 999px;
+  padding: 5px 13px;
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .title {
@@ -18,20 +52,62 @@
   font-size: 1.75rem;
   font-weight: 800;
   line-height: 1.2;
-  align-self: center;
-  text-align: center;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
   color: #838383;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 300;
-  margin-bottom: 10px;
-  align-self: center;
-  text-align: center;
+  line-height: 1.7;
+}
+
+/* Trust signals */
+.trustList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #555555;
+  line-height: 1.4;
+}
+
+.trustDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(198, 176, 153, 0.5);
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   Columna derecha — formulario
+══════════════════════════════════════ */
+
+.right {
+  display: flex;
+  flex-direction: column;
 }
 
 .form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Fila de 2 campos */
+.row {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -41,23 +117,23 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex: 1;
 }
 
 .label {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  color: #838383;
-  letter-spacing: 0.04em;
+  color: #555555;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  text-align: left;
 }
 
 .input {
   background: #222222;
-  border: 1px solid #333333;
-  border-radius: 12px;
-  padding: 13px 16px;
-  font-size: 0.95rem;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 0.9rem;
   font-weight: 400;
   color: #e3e3d9;
   font-family: inherit;
@@ -70,17 +146,17 @@
 }
 
 .input::placeholder {
-  color: #555555;
+  color: #3d3d3d;
 }
 
 .input:focus {
-  border-color: rgba(198, 176, 153, 0.5);
-  box-shadow: 0 0 0 3px rgba(198, 176, 153, 0.08);
+  border-color: rgba(198, 176, 153, 0.45);
+  box-shadow: 0 0 0 3px rgba(198, 176, 153, 0.06);
 }
 
 .select {
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23838383' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23555555' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   background-color: #222222;
@@ -94,22 +170,22 @@
 
 .textarea {
   resize: none;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-/* ── Servicio fijo (marketing / web) ── */
+/* ── Servicio fijo ── */
 .serviceFixed {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   background: #222222;
-  border: 1px solid #333333;
-  border-radius: 12px;
-  padding: 13px 16px;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  padding: 12px 14px;
 }
 
 .serviceFixedValue {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #e3e3d9;
 }
@@ -117,7 +193,7 @@
 .autoMsg {
   font-size: 0.75rem;
   font-weight: 300;
-  color: #838383;
+  color: #555555;
   line-height: 1.5;
   border-top: 1px solid #333333;
   padding-top: 0.5rem;
@@ -126,9 +202,9 @@
 
 /* ── Botón ── */
 .button {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   padding: 14px 28px;
-  border-radius: 999px;
+  border-radius: 8px;
   border: none;
   background: #c6b099;
   color: #1a1a1a;
@@ -137,6 +213,7 @@
   font-family: inherit;
   cursor: pointer;
   letter-spacing: 0.02em;
+  width: 100%;
   transition:
     background 0.2s ease,
     box-shadow 0.2s ease;
@@ -144,26 +221,85 @@
 
 .button:hover {
   background: #d4c0aa;
-  box-shadow: 0 8px 24px rgba(198, 176, 153, 0.25);
+  box-shadow: 0 6px 20px rgba(198, 176, 153, 0.2);
 }
 
 .button:disabled {
-  background: #444444;
-  color: #838383;
+  background: #333333;
+  color: #555555;
   cursor: default;
   box-shadow: none;
 }
 
 .errorMsg {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: #ff6b6b;
   text-align: center;
 }
 
+/* ── Estado de éxito ── */
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 2rem 0;
+}
+
+.successIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(198, 176, 153, 0.3);
+  background: rgba(198, 176, 153, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #c6b099;
+}
+
+.successTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e3e3d9;
+  line-height: 1.2;
+}
+
+.successDesc {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #838383;
+  line-height: 1.65;
+}
+
+.successBtn {
+  margin-top: 0.5rem;
+  background: none;
+  border: 1px solid #3a3a3a;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #555555;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.successBtn:hover {
+  border-color: rgba(198, 176, 153, 0.3);
+  color: #838383;
+}
+
+/* ══════════════════════════════════════
+   Tablet
+══════════════════════════════════════ */
+
 @media (min-width: 767px) {
   .content {
-    padding: 5rem 3rem 5rem;
-    max-width: 560px;
+    padding: 5rem 3rem;
+    max-width: 580px;
     margin: 0 auto;
     width: 100%;
   }
@@ -172,140 +308,155 @@
     font-size: 2.25rem;
   }
 
+  .row {
+    flex-direction: row;
+  }
+
+  .input {
+    font-size: 0.95rem;
+    padding: 13px 16px;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 15px 32px;
+  }
+}
+
+/* ══════════════════════════════════════
+   Laptop — dos columnas
+══════════════════════════════════════ */
+
+@media (min-width: 1023px) {
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    flex-direction: row;
+    align-items: start;
+    gap: 6rem;
+    padding: 7rem 4rem;
+  }
+
+  .left {
+    flex: 1;
+    position: sticky;
+    top: 7rem;
+  }
+
+  .leftInner {
+    gap: 1.1rem;
+  }
+
+  .right {
+    flex: 1.1;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    letter-spacing: -0.025em;
+  }
+
   .subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .trustList {
+    gap: 0.7rem;
+    margin-top: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333333;
+  }
+
+  .trustItem {
+    font-size: 0.85rem;
+  }
+
+  .label {
+    font-size: 0.7rem;
+  }
+
+  .input {
+    font-size: 0.95rem;
+    padding: 13px 16px;
+    border-radius: 8px;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 15px 32px;
+    border-radius: 8px;
+  }
+
+  .successState {
+    padding: 1rem 0;
+  }
+}
+
+/* ══════════════════════════════════════
+   Desktop 1280px
+══════════════════════════════════════ */
+
+@media (min-width: 1279px) {
+  .content {
+    max-width: 1400px;
+    padding: 8rem 6rem;
+    gap: 8rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+  }
+
+  .label {
+    font-size: 0.72rem;
   }
 
   .input {
     font-size: 1rem;
+    padding: 14px 18px;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 16px 36px;
+  }
+
+  .autoMsg {
+    font-size: 0.85rem;
+  }
+}
+
+/* ══════════════════════════════════════
+   Desktop 1536px
+══════════════════════════════════════ */
+
+@media (min-width: 1536px) {
+  .content {
+    max-width: 1500px;
+    padding: 9rem 8rem;
+    gap: 9rem;
+  }
+
+  .title {
+    font-size: 3.25rem;
+  }
+
+  .input {
+    font-size: 1.05rem;
     padding: 15px 18px;
   }
 
   .button {
-    font-size: 1rem;
-    padding: 16px 32px;
+    font-size: 1.05rem;
+    padding: 17px 36px;
   }
 
   .autoMsg {
     font-size: 0.9rem;
-    font-weight: 300;
-    color: #838383;
-    line-height: 1.5;
-    border-top: 1px solid #333333;
-    padding-top: 0.5rem;
-    margin: 0;
-  }
-}
-
-@media (min-width: 1023px) {
-  .content {
-    max-width: 700px;
-    padding: 6rem 4rem;
-  }
-
-  .title {
-    font-size: 2.75rem;
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .autoMsg {
-    font-size: 1rem;
-    font-weight: 300;
-    color: #838383;
-    line-height: 1.5;
-    border-top: 1px solid #333333;
-    padding-top: 0.5rem;
-    margin: 0;
-  }
-}
-
-/* ────────────────────────────
-   Desktop 1280px
-──────────────────────────── */
-@media (min-width: 1279px) {
-  .content {
-    max-width: 860px;
-    padding: 7rem 5rem;
-    gap: 1rem;
-  }
-
-  .title {
-    font-size: 3.5rem;
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .label {
-    font-size: 0.9rem;
-  }
-
-  .input {
-    font-size: 1.1rem;
-    padding: 17px 20px;
-    border-radius: 14px;
-  }
-
-  .button {
-    font-size: 1.1rem;
-    padding: 18px 36px;
-  }
-
-    .autoMsg {
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: #838383;
-    line-height: 1.5;
-    border-top: 1px solid #333333;
-    padding-top: 0.5rem;
-    margin: 0;
-  }
-}
-
-/* ────────────────────────────
-   Desktop 1536px
-──────────────────────────── */
-@media (min-width: 1536px) {
-  .content {
-    max-width: 1000px;
-    padding: 8rem 6rem;
-    gap: 1.25rem;
-  }
-
-  .title {
-    font-size: 4rem;
-  }
-
-  .subtitle {
-    font-size: 1.3rem;
-  }
-
-  .label {
-    font-size: 1rem;
-  }
-
-  .input {
-    font-size: 1.2rem;
-    padding: 19px 22px;
-    border-radius: 16px;
-  }
-
-  .button {
-    font-size: 1.2rem;
-    padding: 20px 40px;
-  }
-
-      .autoMsg {
-    font-size: 1.3rem;
-    font-weight: 300;
-    color: #838383;
-    line-height: 1.5;
-    border-top: 1px solid #333333;
-    padding-top: 0.5rem;
-    margin: 0;
   }
 }

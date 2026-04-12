@@ -37,7 +37,7 @@ export default function Hero() {
         {/* Bloque inferior */}
         <div className={styles.bottom}>
           <div className={styles.recomend}>
-            <p className={styles.description}>Ellos confiaron en nosotros</p>
+            {/* <p className={styles.description}>Ellos confiaron en nosotros</p> */}
             {/* <Marquee /> */}
           </div>
           <div className={styles.divider}>

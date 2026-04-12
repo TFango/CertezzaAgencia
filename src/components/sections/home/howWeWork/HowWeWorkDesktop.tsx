@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import Link from "next/link";
 import styles from "./HowWeWork.module.css";
 
 const steps = [
@@ -10,7 +9,7 @@ const steps = [
     id: "01",
     title: "Conversamos",
     description:
-      "Entendemos tu negocio y tus desafíos. En 30 minutos tenés claridad sobre qué necesitás y cómo resolverlo. Sin compromiso.",
+      "Una llamada de 30 minutos donde entendemos tu negocio, tus objetivos y tus dolores reales. No hay formularios ni plantillas: escuchamos para entender qué tiene sentido para vos.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -21,7 +20,7 @@ const steps = [
     id: "02",
     title: "Diseñamos",
     description:
-      "Creamos juntos la solución ideal. Prototipos, flujos y una propuesta clara antes de escribir código.",
+      "Traducimos lo que hablamos en una propuesta concreta: estructura, flujos y decisiones de diseño. Todo sobre la mesa antes de arrancar, para que no haya sorpresas.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="5" />
@@ -40,7 +39,7 @@ const steps = [
     id: "03",
     title: "Desarrollamos",
     description:
-      "Construimos con las mejores prácticas. Te mantenemos al tanto del progreso en cada etapa.",
+      "Ejecutamos con criterio y te mantenemos en el loop. Cada avance es visible, cada decisión tiene un porqué. Vos te enfocás en tu negocio, nosotros en que todo salga bien.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <polyline points="16 18 22 12 16 6" />
@@ -52,7 +51,7 @@ const steps = [
     id: "04",
     title: "Acompañamos",
     description:
-      "El lanzamiento es solo el comienzo. Soporte continuo, mejoras y evolución de tu solución.",
+      "Lanzamos y no desaparecemos. Reportes claros, ajustes según resultados y nuevas ideas cuando el negocio lo pide. La relación no termina en la entrega.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="10" />

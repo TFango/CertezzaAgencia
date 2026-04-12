@@ -9,25 +9,25 @@ const steps = [
     number: "Etapa 1",
     title: "Reunión inicial",
     description:
-      "Nos contás tu proyecto, tus objetivos y tu presupuesto. Sin compromiso.",
+      "Una llamada de 30 minutos para entender tu negocio, tus objetivos y tus dolores reales. Sin formularios ni plantillas.",
   },
   {
     number: "Etapa 2",
     title: "Propuesta personalizada",
     description:
-      "Armamos una estrategia o plan a medida según lo que necesita tu negocio.",
+      "Traducimos lo que hablamos en una propuesta concreta con estructura, flujos y decisiones claras. Todo definido antes de arrancar.",
   },
   {
     number: "Etapa 3",
     title: "Ejecución",
     description:
-      "Nos ponemos a trabajar. Vos te enfocás en tu negocio, nosotros en el resto.",
+      "Ejecutamos con criterio y te mantenemos en el loop. Cada avance es visible y cada decisión tiene un porqué.",
   },
   {
     number: "Etapa 4",
     title: "Seguimiento",
     description:
-      "Reportes, ajustes y comunicación constante para que siempre estés al tanto.",
+      "Lanzamos y no desaparecemos. Reportes claros, ajustes según resultados y nuevas ideas cuando el negocio lo pide.",
   },
 ];
 

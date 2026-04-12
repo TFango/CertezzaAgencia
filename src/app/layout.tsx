@@ -1,5 +1,3 @@
-import "./global.css";
-
 import Header from "@/components/layout/header";
 import AppWrapper from "@/components/appWrapper";
 import Footer from "@/components/layout/footer";
@@ -9,6 +7,7 @@ import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import Script from "next/script";
 import WppButton from "@/components/ui/wppButton";
+import "./global.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://certezza.com.ar"),

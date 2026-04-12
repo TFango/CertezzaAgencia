@@ -1,40 +1,42 @@
-.section {
+/* ══════════════════════════════════════
+   MOBILE / TABLET — diseño original
+══════════════════════════════════════ */
+
+.mSection {
   padding: 4rem 1.25rem 6rem;
   background: #111111;
   color: #e3e3d9;
+  display: block;
 }
 
-/* ── Header ── */
-.header {
+.mHeader {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   margin-bottom: 2rem;
 }
 
-.title {
+.mTitle {
   font-size: 1.75rem;
   font-weight: 800;
   color: #e3e3d9;
   line-height: 1.2;
 }
 
-.subtitle {
+.mSubtitle {
   font-size: 0.95rem;
   font-weight: 300;
   color: #838383;
   line-height: 1.7;
 }
 
-/* ── Steps ── */
-.steps {
+.mSteps {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-/* ── Step ── */
-.step {
+.mStep {
   display: flex;
   gap: 1.25rem;
   align-items: flex-start;
@@ -45,194 +47,317 @@
   transition: border-color 0.3s ease;
 }
 
-.step:hover {
-  border-color: rgba(212, 157, 251, 0.2);
+.mStep:hover {
+  border-color: rgba(205, 154, 250, 0.2);
 }
 
-/* ── Número ── */
-.number {
+.mNumber {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #d49dfb;
+  color: #cd9afa;
   letter-spacing: 0.08em;
   padding-top: 3px;
   min-width: 24px;
   flex-shrink: 0;
 }
 
-/* ── Contenido ── */
-.content {
+.mContent {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
 
-.stepTitle {
+.mStepTitle {
   font-size: 1rem;
   font-weight: 700;
   color: #e3e3d9;
   line-height: 1.3;
 }
 
-.stepText {
+.mStepText {
   font-size: 0.875rem;
   font-weight: 300;
   color: #838383;
   line-height: 1.6;
 }
 
+/* Desktop oculto en mobile */
+.dSection {
+  display: none;
+}
+
 @media (min-width: 767px) {
-  .section {
+  .mSection {
     padding: 5rem 2.5rem 6rem;
   }
 
-  .title {
+  .mTitle {
     font-size: 3rem;
   }
 
-  .subtitle {
+  .mSubtitle {
     font-size: 1.2rem;
     max-width: 540px;
   }
 
-  .step {
+  .mStep {
     padding: 2rem;
   }
 
-  .stepTitle {
+  .mStepTitle {
     font-size: 1.1rem;
   }
 
-  .stepText {
+  .mStepText {
     font-size: 0.95rem;
   }
 
-  .number {
+  .mNumber {
     font-size: 0.85rem;
   }
 }
 
+/* ══════════════════════════════════════
+   DESKTOP — timeline horizontal (1023px+)
+   Acento: #cd9afa (marketing purple)
+══════════════════════════════════════ */
+
 @media (min-width: 1023px) {
-  .section {
-    padding: 6rem 4rem 7rem;
+  .mSection {
+    display: none;
   }
 
-  .header {
-    max-width: 1200px;
-    margin: 0 auto 3rem;
+  .dSection {
+    display: flex;
+    align-items: center;
+    background: #111111;
+    padding: 6rem 4rem;
+    min-height: 100vh;
   }
 
-  .title {
-    font-size: 3.5rem;
-  }
-
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  .dContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
   }
 
-  .step {
-    padding: 2.5rem;
+  .dHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
-  .stepTitle {
-    font-size: 1.2rem;
+  .dBadge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 1rem;
+    border: 1.5px solid #2a2a2a;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #838383;
+    width: fit-content;
   }
 
-  .stepText {
-    font-size: 1rem;
+  .dTitle {
+    font-size: clamp(5rem, 10vw, 9rem);
+    font-weight: 900;
+    color: #e3e3d9;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    margin: 0;
+  }
+
+  /* Timeline horizontal */
+  .dTimeline {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+    position: relative;
+  }
+
+  .dTimeline::before {
+    content: "";
+    position: absolute;
+    top: 44px;
+    left: 44px;
+    right: 44px;
+    height: 1.5px;
+    background: #2a2a2a;
+    z-index: 0;
+  }
+
+  .dStep {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.25s ease;
+  }
+
+  .dIconWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 88px;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 26px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    flex-shrink: 0;
+  }
+
+  .dIconSvg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e3e3d9;
+  }
+
+  .dIconSvg svg {
+    width: 36px;
+    height: 36px;
+    stroke: currentColor;
+  }
+
+  .dStepBadge {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 28px;
+    height: 28px;
+    background: #e3e3d9;
+    color: #111111;
+    border-radius: 50%;
+    font-size: 0.65rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dStepContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    text-align: center;
+  }
+
+  .dStepTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e3e3d9;
+    line-height: 1.2;
+  }
+
+  .dStepDescription {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #838383;
+    line-height: 1.6;
+    max-width: 22ch;
+  }
+
+  /* CTA */
+  .dCta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .dCtaText {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #838383;
+    margin: 0;
+  }
+
+  .dCtaText em {
+    font-style: normal;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: #cd9afa;
+    font-weight: 500;
   }
 }
 
-/* ────────────────────────────
+/* ══════════════════════════════════════
    Desktop 1280px
-──────────────────────────── */
+══════════════════════════════════════ */
+
 @media (min-width: 1279px) {
-  .section {
+  .dSection {
     padding: 7rem 6rem 8rem;
   }
 
-  .header {
+  .dContainer {
     max-width: 1400px;
-    margin: 0 auto 3.5rem;
+    gap: 3.5rem;
   }
 
-  .title {
-    font-size: 4rem;
+  .dTimeline::before {
+    top: 50px;
+    left: 50px;
+    right: 50px;
   }
 
-  .subtitle {
+  .dIconWrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 28px;
+  }
+
+  .dIconSvg svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dStepBadge {
+    width: 30px;
+    height: 30px;
+    font-size: 0.7rem;
+    bottom: -11px;
+    right: -11px;
+  }
+
+  .dStepTitle {
     font-size: 1.2rem;
-    max-width: 640px;
   }
 
-  .steps {
-    max-width: 1400px;
-    gap: 1.25rem;
-  }
-
-  .step {
-    padding: 3rem;
-    border-radius: 24px;
-  }
-
-  .number {
+  .dStepDescription {
     font-size: 0.95rem;
-  }
-
-  .stepTitle {
-    font-size: 1.4rem;
-  }
-
-  .stepText {
-    font-size: 1.2rem;
+    max-width: 24ch;
   }
 }
 
-/* ────────────────────────────
+/* ══════════════════════════════════════
    Desktop 1536px
-──────────────────────────── */
+══════════════════════════════════════ */
+
 @media (min-width: 1536px) {
-  .section {
-    padding: 7rem 6rem 8rem;
-  }
-
-  .header {
+  .dContainer {
     max-width: 1500px;
-    margin: 0 auto 3.5rem;
   }
 
-  .title {
-    font-size: 4rem;
+  .dStepTitle {
+    font-size: 1.3rem;
   }
 
-  .subtitle {
-    font-size: 1.2rem;
-    max-width: 640px;
-  }
-
-  .steps {
-    max-width: 1500px;
-    gap: 1.25rem;
-  }
-
-  .step {
-    padding: 3rem;
-    border-radius: 24px;
-  }
-
-  .number {
-    font-size: 0.95rem;
-  }
-
-  .stepTitle {
-    font-size: 1.4rem;
-  }
-
-  .stepText {
-    font-size: 1.2rem;
+  .dStepDescription {
+    font-size: 1rem;
+    max-width: 26ch;
   }
 }

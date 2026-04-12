@@ -7,49 +7,109 @@ import Link from "next/link";
 import styles from "./Header.module.css";
 
 const homeNav = [
-  { number: "01", label: "Inicio", href: "/" },
-  {
-    number: "02",
-    label: "Problema que resolvemos",
-    href: "#problemasQueResolvemos",
-  },
-  { number: "03", label: "Servicios", href: "#servicios" },
-  { number: "04", label: "Por qué elegirnos?", href: "#porQueElegirnos" },
-  { number: "05", label: "Cómo trabajamos", href: "#comoTrabajamos" },
-  { number: "06", label: "Contacto", href: "#contacto" },
+  { number: "01", label: "Inicio", href: "/", isCta: false },
+  { number: "02", label: "Nuestro enfoque", href: "#problemasQueResolvemos", isCta: false },
+  { number: "03", label: "Servicios", href: "#servicios", isCta: false },
+  { number: "04", label: "Por qué elegirnos", href: "#porQueElegirnos", isCta: false },
+  { number: "05", label: "Cómo trabajamos", href: "#comoTrabajamos", isCta: false },
+  { number: "06", label: "Contacto", href: "#contacto", isCta: true },
 ];
 
 const marketingNav = [
-  { number: "01", label: "Inicio", href: "/" },
-  { number: "02", label: "Packs", href: "#packs" },
-  { number: "03", label: "Cómo trabajamos", href: "#comoTrabajamos" },
-  { number: "04", label: "Contacto", href: "#contacto" },
+  { number: "01", label: "Inicio", href: "/", isCta: false },
+  { number: "02", label: "Packs", href: "#packs", isCta: false },
+  { number: "03", label: "Cómo trabajamos", href: "#comoTrabajamos", isCta: false },
+  { number: "04", label: "Contacto", href: "#contacto", isCta: true },
 ];
 
 const webNav = [
-  { number: "01", label: "Inicio", href: "/" },
-  { number: "02", label: "Packs", href: "#packs" },
-  { number: "03", label: "Cómo trabajamos", href: "#comoTrabajamos" },
-  { number: "04", label: "Contacto", href: "#contacto" },
+  { number: "01", label: "Inicio", href: "/", isCta: false },
+  { number: "02", label: "Packs", href: "#packs", isCta: false },
+  { number: "03", label: "Cómo trabajamos", href: "#comoTrabajamos", isCta: false },
+  { number: "04", label: "Contacto", href: "#contacto", isCta: true },
+];
+
+// IDs de secciones para scroll spy
+const homeSections = [
+  { href: "/", id: null },
+  { href: "#servicios", id: "servicios" },
+  { href: "#problemasQueResolvemos", id: "problemasQueResolvemos" },
+  { href: "#porQueElegirnos", id: "porQueElegirnos" },
+  { href: "#comoTrabajamos", id: "comoTrabajamos" },
+  { href: "#contacto", id: "contacto" },
+];
+
+const subpageSections = [
+  { href: "/", id: null },
+  { href: "#packs", id: "packs" },
+  { href: "#comoTrabajamos", id: "comoTrabajamos" },
+  { href: "#contacto", id: "contacto" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeHref, setActiveHref] = useState("/");
   const pathname = usePathname();
+
+  // Scroll behavior — píldora se comprime
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Scroll spy — sección activa
+  useEffect(() => {
+    const isSubpage =
+      pathname === "/servicios/marketing" || pathname === "/servicios/web";
+    if (pathname !== "/" && !isSubpage) return;
+
+    const sections = isSubpage ? subpageSections : homeSections;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const matched = sections.find((s) => s.id === entry.target.id);
+            if (matched) setActiveHref(matched.href);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+
+    sections.forEach(({ id }) => {
+      if (id) {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      }
+    });
+
+    // Si está en el top, marcar Inicio
+    const onScroll = () => {
+      if (window.scrollY < 80) setActiveHref("/");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
 
   const navItems =
-    pathname === "/servicios/marketing"
-      ? marketingNav
-      : pathname === "/servicios/web"
-        ? webNav
-        : homeNav;
+    pathname === "/servicios/marketing" ? marketingNav
+    : pathname === "/servicios/web" ? webNav
+    : homeNav;
+
+  const navLinks = navItems.filter((i) => !i.isCta);
+  const ctaItem = navItems.find((i) => i.isCta);
 
   return (
     <>
@@ -59,31 +119,53 @@ export default function Header() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className={styles.container}>
+        <motion.div
+          className={styles.container}
+          animate={{ height: scrolled ? 42 : 48 }}
+          transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+        >
+          {/* Logo */}
           <Link
             href="/"
             aria-label="Certezza - Ir al inicio"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className={styles.logoLink}
           >
-            <img
-              src="/logos/logo-gris.svg"
-              alt="Certezza"
-              className={styles.logo}
-            />
+            <img src="/logos/logo-gris.svg" alt="Certezza" className={styles.logo} />
           </Link>
 
-          {/* Nav desktop — visible solo en laptop */}
+          {/* Separador vertical */}
+          <span className={styles.divider} aria-hidden="true" />
+
+          {/* Nav desktop */}
           <nav className={styles.desktopNav}>
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={styles.desktopNavItem}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navLinks.map((item) => {
+              const isActive = activeHref === item.href;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`${styles.desktopNavItem} ${isActive ? styles.desktopNavItemActive : ""}`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <motion.span
+                      className={styles.activeDot}
+                      layoutId="nav-active-dot"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
+
+          {/* CTA — Contacto */}
+          {ctaItem && (
+            <Link href={ctaItem.href} className={styles.desktopCta}>
+              {ctaItem.label}
+            </Link>
+          )}
 
           {/* Hamburguesa — oculto en laptop */}
           <motion.button
@@ -98,7 +180,7 @@ export default function Header() {
               aria-hidden="true"
             />
           </motion.button>
-        </div>
+        </motion.div>
       </motion.header>
 
       {/* Overlay mobile/tablet */}
@@ -142,11 +224,7 @@ export default function Header() {
                   rel="noopener noreferrer"
                   className={styles.socialLink}
                 >
-                  <img
-                    src="/icons/instagram.svg"
-                    alt="Instagram"
-                    className={styles.socialIcon}
-                  />
+                  <img src="/icons/instagram.svg" alt="Instagram" className={styles.socialIcon} />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/certezza-agencia/"
@@ -154,11 +232,7 @@ export default function Header() {
                   rel="noopener noreferrer"
                   className={styles.socialLink}
                 >
-                  <img
-                    src="/icons/linkedin.svg"
-                    alt="LinkedIn"
-                    className={styles.socialIcon}
-                  />
+                  <img src="/icons/linkedin.svg" alt="LinkedIn" className={styles.socialIcon} />
                 </a>
               </div>
             </div>

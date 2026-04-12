@@ -132,7 +132,11 @@
 
 .dHowWeWork {
   background: #202020;
-  padding: 6rem 4rem 7rem;
+  padding: 6rem 4rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #202020;
 }
 
 .dContainer {
@@ -141,6 +145,7 @@
   gap: 3rem;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 /* ── Encabezado ── */
