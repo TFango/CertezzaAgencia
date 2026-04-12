@@ -25,7 +25,8 @@
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
   transition:
     background 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    max-width 0.35s ease;
 }
 
 .container:hover {
@@ -78,18 +79,80 @@
   display: none;
 }
 
+.logoLink {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Separador vertical logo / nav */
+.divider {
+  display: none;
+  width: 1px;
+  height: 18px;
+  background: rgba(26, 26, 26, 0.15);
+  flex-shrink: 0;
+}
+
 .desktopNavItem {
   font-size: 0.82rem;
   font-weight: 500;
-  color: rgba(26, 26, 26, 0.75);
+  color: rgba(26, 26, 26, 0.65);
   text-decoration: none;
   letter-spacing: 0.01em;
   transition: color 0.2s ease;
   white-space: nowrap;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
 }
 
 .desktopNavItem:hover {
   color: #1a1a1a;
+}
+
+.desktopNavItemActive {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+/* Dot indicador de sección activa */
+.activeDot {
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* CTA Contacto */
+.desktopCta {
+  display: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  background: rgba(26, 26, 26, 0.1);
+  border: 1px solid rgba(26, 26, 26, 0.15);
+  border-radius: 999px;
+  padding: 5px 14px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.desktopCta:hover {
+  background: rgba(26, 26, 26, 0.16);
+  border-color: rgba(26, 26, 26, 0.25);
 }
 
 /* ── Overlay ── */
@@ -229,16 +292,26 @@
     max-width: 860px;
     height: 48px;
     padding: 10px 20px;
-    gap: 2rem;
+    gap: 1.25rem;
   }
 
-  /* Mostrá el nav desktop */
+  /* Separador visible */
+  .divider {
+    display: block;
+  }
+
+  /* Nav desktop */
   .desktopNav {
     display: flex;
     align-items: center;
     gap: 1.5rem;
     flex: 1;
-    justify-content: right;
+    justify-content: flex-end;
+  }
+
+  /* CTA visible */
+  .desktopCta {
+    display: block;
   }
 
   /* Escondé el botón hamburguesa */
@@ -254,9 +327,9 @@
 @media (min-width: 1279px) {
   .container {
     max-width: 1100px;
-    height: 56px;
+    height: 52px;
     padding: 14px 28px;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .logo {
@@ -271,6 +344,11 @@
     font-size: 0.88rem;
     letter-spacing: 0.02em;
   }
+
+  .desktopCta {
+    font-size: 0.88rem;
+    padding: 6px 16px;
+  }
 }
 
 /* ────────────────────────────
@@ -279,8 +357,9 @@
 @media (min-width: 1536px) {
   .container {
     max-width: 1200px;
-    height: 56px;
+    height: 52px;
     padding: 14px 32px;
+    gap: 1.75rem;
   }
 
   .logo {
@@ -294,4 +373,10 @@
   .desktopNavItem {
     font-size: 0.92rem;
   }
+
+  .desktopCta {
+    font-size: 0.92rem;
+    padding: 6px 18px;
+  }
 }
+
